@@ -9,8 +9,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Logo\logoyazili.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\NDATTibbiCihaz.Common\NDATTibbiCihaz.Common.csproj" />
     <ProjectReference Include="..\NDATTibbiCihaz.Service\NDATTibbiCihaz.Service.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Logo\logoyazili.jpg" />
   </ItemGroup>
 
 </Project>

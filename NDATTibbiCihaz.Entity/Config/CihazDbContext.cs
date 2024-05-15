@@ -9,7 +9,7 @@ using NDATTibbiCihaz.Common;
 
 namespace NDATTibbiCihaz.Entity.Config
 {
-    internal class CihazDbContext : DbContext
+    public class CihazDbContext : DbContext
     {
 
         public DbSet<Hasta> Hastalar { get; set; }
