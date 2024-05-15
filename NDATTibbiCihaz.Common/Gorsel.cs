@@ -18,5 +18,7 @@ namespace NDATTibbiCihaz.Common
         public string PathGorsel { get; set; }
 
         public decimal Aci { get; set; }
+
+        public int CiktiId { get; set; }
     }
 }
