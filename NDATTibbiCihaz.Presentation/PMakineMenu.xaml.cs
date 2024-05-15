@@ -62,6 +62,7 @@ namespace NDATTibbiCihaz.Presentation
             if (Makine.KapakDurumu)
             {
                 LabelKapakDurumu.Content = "Başarılı";
+                visibilityTumDurumlar(true);
             }
             else
             {
@@ -84,9 +85,60 @@ namespace NDATTibbiCihaz.Presentation
             }
         }
 
+        private void visibilityTumDurumlar(bool visible)
+        {
+            if (visible)
+            {
+                LabelProj.Visibility = Visibility.Visible;
+                TextBoxProj.Visibility = Visibility.Visible;
+                LabelAdim.Visibility = Visibility.Visible;
+                TextBoxAdim.Visibility = Visibility.Visible;
+                LabelTaramaAcisi.Visibility = Visibility.Visible;
+                TextBoxTaramaAcisi.Visibility = Visibility.Visible;
+                ButtonTumTestler.Visibility = Visibility.Visible;
+                LabelXRayDurumu.Visibility = Visibility.Visible;
+                LabelXRayDurumuText.Visibility = Visibility.Visible;
+                LabelPlatformDonusDurumu.Visibility = Visibility.Visible;
+                LabelPlatformDonusDurumuText.Visibility = Visibility.Visible;
+                LabelTaramaDurumu.Visibility = Visibility.Visible;
+                LabelTaramaDurumuText.Visibility = Visibility.Visible;
+            }
+        }
+
         private void ButtonBaglantiyiKes_Click(object sender, RoutedEventArgs e)
         {
             MainWindow.SayfaGecis(new PMakineMenu());
+        }
+
+        private void ButtonTumTestler_Click(object sender, RoutedEventArgs e)
+        {
+            if (Makine.XRayDurumu)
+            {
+                LabelXRayDurumu.Content = "Başarılı";
+            }
+            else
+            {
+                LabelXRayDurumu.Content = "Başarısız";
+            }
+
+            if (Makine.PlatformDonusDurumu)
+            {
+                LabelPlatformDonusDurumu.Content = "Başarılı";
+            }
+            else
+            {
+                LabelPlatformDonusDurumu.Content = "Başarısız";
+            }
+
+            if (Makine.TaramaDurumu)
+            {
+                LabelTaramaDurumu.Content = "Başarılı";
+            }
+            else
+            {
+                LabelTaramaDurumu.Content = "Başarısız";
+            }
+
         }
     }
 }
