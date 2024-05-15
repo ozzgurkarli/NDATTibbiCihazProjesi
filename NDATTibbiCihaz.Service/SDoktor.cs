@@ -12,7 +12,7 @@ namespace NDATTibbiCihaz.Service
     {
         private readonly EDoktor eDoktor = new EDoktor();
 
-        public Doktor OkuDoktor(Doktor item)
+        public Doktor GirisYapDoktor(Doktor item)
         {
             if (item.Id == 0)
             {

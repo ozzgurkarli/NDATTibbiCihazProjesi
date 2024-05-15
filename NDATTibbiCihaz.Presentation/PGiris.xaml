@@ -12,11 +12,11 @@
         <StackPanel HorizontalAlignment="Center" Width="1280" Height="626" VerticalAlignment="Center">
             <Image Source="/Logo/logoyazili.jpg" Height="273" Width="533"/>
         </StackPanel>
-        <Label Content="ID:" Margin="518,623,-224,0" Foreground="White" Background="{x:Null}" VerticalAlignment="Top"/>
-        <Label Content="Parola:" Margin="498,666,-224,0" Foreground="White" Background="{x:Null}" VerticalAlignment="Top"/>
-        <TextBox x:Name="TextBoxID" Margin="580,627,500,0" TextWrapping="Wrap" VerticalAlignment="Top" PreviewTextInput="TextBoxID_PreviewTextInput"/>
-        <Button x:Name="ButtonGirisYap" Content="Giriş Yap" HorizontalAlignment="Center" Margin="0,751,0,0" VerticalAlignment="Top" Width="144" RenderTransformOrigin="0.505,-1.227" Click="ButtonGirisYap_Click"/>
-        <PasswordBox x:Name="TextBoxParola" Margin="580,670,500,0" VerticalAlignment="Top" PasswordChar="*"/>
+        <Label Content="ID:" Margin="620,623,-224,0" Foreground="White" Background="{x:Null}" VerticalAlignment="Top"/>
+        <Label Content="Parola:" Margin="597,666,-224,0" Foreground="White" Background="{x:Null}" VerticalAlignment="Top"/>
+        <TextBox x:Name="TextBoxID" Margin="700,627,700,0" TextWrapping="Wrap" VerticalAlignment="Top" PreviewTextInput="TextBoxID_PreviewTextInput"/>
+        <Button x:Name="ButtonGirisYap" Content="Giriş Yap" HorizontalAlignment="Left" Margin="856,728,0,0" VerticalAlignment="Top" Width="172" RenderTransformOrigin="0.505,-1.227" Click="ButtonGirisYap_Click" Height="40"/>
+        <PasswordBox x:Name="TextBoxParola" Margin="700,670,700,0" VerticalAlignment="Top" PasswordChar="*"/>
 
     </Grid>
 </Page>
