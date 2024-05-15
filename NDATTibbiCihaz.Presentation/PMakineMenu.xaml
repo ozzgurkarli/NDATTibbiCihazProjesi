@@ -1,0 +1,21 @@
+﻿<Page x:Class="NDATTibbiCihaz.Presentation.PMakineMenu"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:NDATTibbiCihaz.Presentation"
+      mc:Ignorable="d" 
+      d:DesignHeight="1080" d:DesignWidth="1920"
+      Title="PMakineMenu">
+
+    <Grid Background="Black" Loaded="Grid_Loaded">
+        <ComboBox x:Name="ComboBoxMakine" HorizontalAlignment="Left" Margin="716,155,0,0" VerticalAlignment="Top" Width="400" Height="40" FontSize="24"/>
+        <Label x:Name="LabelKullanilabilirMakinelerText" Content="Kullanılabilir Makineler:" HorizontalAlignment="Left" Margin="436,153,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.75,1.676" Foreground="White" FontSize="24"/>
+        <Button x:Name="ButtonBaglan" Content="Bağlan" HorizontalAlignment="Left" Margin="1221,153,0,0" VerticalAlignment="Top" Height="40" Width="301" FontSize="24" Click="ButtonBaglan_Click"/>
+        <Label x:Name="LabelKapakDurumuText" Content="Kapak Durumu:" HorizontalAlignment="Left" Margin="518,233,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.75,1.676" Foreground="White" FontSize="24" Visibility="Hidden"/>
+        <Label x:Name="LabelKapakDurumu" HorizontalAlignment="Left" Margin="866,233,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.75,1.676" Foreground="White" FontSize="24" Content="Bekliyor" Visibility="Hidden"/>
+        <Button x:Name="ButtonKapakTesti" Content="Kapak Testi" HorizontalAlignment="Left" Margin="1221,233,0,0" VerticalAlignment="Top" Height="40" Width="301" FontSize="24" Visibility="Hidden" Click="ButtonKapakTesti_Click"/>
+        <Button x:Name="ButtonBaglantiyiKes" Content="Bağlantıyı Kes" HorizontalAlignment="Left" Margin="1221,153,0,0" VerticalAlignment="Top" Height="40" Width="301" FontSize="24" Visibility="Hidden" Click="ButtonBaglantiyiKes_Click"/>
+
+    </Grid>
+</Page>

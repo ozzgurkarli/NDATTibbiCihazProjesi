@@ -5,10 +5,11 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:NDATTibbiCihaz.Presentation"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="1080" d:DesignWidth="1920"
       Title="PAnaMenu">
 
-    <Grid>
-        
+    <Grid Background="Black">
+        <Button x:Name="ButtonMakineyeBaglan" Content="MAKINEYE BAĞLAN" HorizontalAlignment="Left" Margin="600,402,0,0" VerticalAlignment="Top" Height="250" Width="250" FontSize="24" Click="ButtonMakineyeBaglan_Click"/>
+        <Button Content="SONUÇ EKRANI" HorizontalAlignment="Right" Margin="0,402,600,0" VerticalAlignment="Top" Height="250" Width="250" FontSize="24"/>
     </Grid>
 </Page>

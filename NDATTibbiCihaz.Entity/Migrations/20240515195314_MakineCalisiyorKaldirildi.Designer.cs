@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using NDATTibbiCihaz.Entity.Config;
 
@@ -11,9 +12,11 @@ using NDATTibbiCihaz.Entity.Config;
 namespace NDATTibbiCihaz.Entity.Migrations
 {
     [DbContext(typeof(CihazDbContext))]
-    partial class CihazDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240515195314_MakineCalisiyorKaldirildi")]
+    partial class MakineCalisiyorKaldirildi
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

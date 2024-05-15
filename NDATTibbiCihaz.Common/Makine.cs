@@ -25,6 +25,5 @@ namespace NDATTibbiCihaz.Common
 
         public bool Kullanilabilirlik { get; set; }
 
-        public bool Calisiyor { get; set; }
     }
 }

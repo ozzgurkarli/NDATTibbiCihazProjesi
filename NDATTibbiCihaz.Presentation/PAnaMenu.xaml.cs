@@ -24,5 +24,10 @@ namespace NDATTibbiCihaz.Presentation
         {
             InitializeComponent();
         }
+
+        private void ButtonMakineyeBaglan_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow.SayfaGecis(new PMakineMenu());
+        }
     }
 }
