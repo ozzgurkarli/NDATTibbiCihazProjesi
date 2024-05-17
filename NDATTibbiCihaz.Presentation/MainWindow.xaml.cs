@@ -26,7 +26,7 @@ namespace NDATTibbiCihaz.Presentation
 
         private void Main_Loaded(object sender, RoutedEventArgs e)
         {
-            //SayfaGecis(new PGiris()); bittiginde burayı acmayı unutma
+            //SayfaGecis(new PGiris());  // bittiginde burayı acmayı unutma
             SayfaGecis(new PAnaMenu());
         }
 
