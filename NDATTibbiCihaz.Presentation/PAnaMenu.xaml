@@ -8,8 +8,12 @@
       d:DesignHeight="1080" d:DesignWidth="1920"
       Title="PAnaMenu">
 
-    <Grid Background="Black">
-        <Button x:Name="ButtonMakineyeBaglan" Content="MAKINEYE BAĞLAN" HorizontalAlignment="Left" Margin="600,402,0,0" VerticalAlignment="Top" Height="250" Width="250" FontSize="24" Click="ButtonMakineyeBaglan_Click"/>
-        <Button Content="SONUÇ EKRANI" HorizontalAlignment="Right" Margin="0,402,600,0" VerticalAlignment="Top" Height="250" Width="250" FontSize="24"/>
+    <Grid Background="Black" Loaded="Grid_Loaded">
+        <StackPanel HorizontalAlignment="Center" Width="1280" Height="966" VerticalAlignment="Center">
+            <Image Source="/Logo/logoyazili.jpg" Height="242" Width="532"/>
+        </StackPanel>
+        <Button x:Name="ButtonMakineyeBaglan" Content="MAKINEYE BAĞLAN" HorizontalAlignment="Left" Margin="600,500,0,0" VerticalAlignment="Top" Height="250" Width="250" FontSize="24" Click="ButtonMakineyeBaglan_Click"/>
+        <Button x:Name="ButtonSonucEkraninaBaglan" Content="SONUÇ EKRANI" HorizontalAlignment="Right" Margin="0,500,600,0" VerticalAlignment="Top" Height="250" Width="250" FontSize="24" Click="ButtonSonucEkraninaBaglan_Click"/>
+        <Label x:Name="TextBoxHosgeldiniz" HorizontalAlignment="Center" Margin="0,400,0,0" VerticalAlignment="Top" Foreground="White" FontSize="24"/>
     </Grid>
 </Page>

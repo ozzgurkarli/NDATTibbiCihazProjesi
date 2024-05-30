@@ -3,25 +3,30 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       xmlns:local="clr-namespace:NDATTibbiCihaz.Presentation"
       mc:Ignorable="d" 
       d:DesignHeight="1080" d:DesignWidth="1920"
       Title="PMakineMenu">
 
-    <Grid Background="Black" Loaded="Grid_Loaded">
+    <Grid Background="#FF888888" Loaded="Grid_Loaded">
         <ComboBox x:Name="ComboBoxMakine" HorizontalAlignment="Left" Margin="716,155,0,0" VerticalAlignment="Top" Width="400" Height="40" FontSize="24"/>
         <Label x:Name="LabelKullanilabilirMakinelerText" Content="Kullanılabilir Makineler:" HorizontalAlignment="Left" Margin="436,153,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.75,1.676" Foreground="White" FontSize="24"/>
         <Button x:Name="ButtonBaglan" Content="Bağlan" HorizontalAlignment="Left" Margin="1221,153,0,0" VerticalAlignment="Top" Height="40" Width="301" FontSize="24" Click="ButtonBaglan_Click"/>
         <Label x:Name="LabelKapakDurumuText" Content="Kapak Durumu:" HorizontalAlignment="Left" Margin="518,233,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.75,1.676" Foreground="White" FontSize="24" Visibility="Hidden"/>
         <Label x:Name="LabelKapakDurumu" HorizontalAlignment="Left" Margin="866,233,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.75,1.676" Foreground="White" FontSize="24" Content="Bekliyor" Visibility="Hidden"/>
+        <materialDesign:PackIcon x:Name="IconKapakDurumu" Width="50" Height="50" HorizontalAlignment="Left" Margin="1033,233,0,0" Visibility="Hidden"/>
         <Label x:Name="LabelXRayDurumuText" Content="XRay Durumu:" HorizontalAlignment="Left" Margin="518,706,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.75,1.676" Foreground="White" FontSize="24" Visibility="Hidden"/>
         <Label x:Name="LabelXRayDurumu" HorizontalAlignment="Left" Margin="866,706,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.75,1.676" Foreground="White" FontSize="24" Content="Bekliyor" Visibility="Hidden"/>
+        <materialDesign:PackIcon x:Name="IconXRayDurumu" Width="50" Height="50" HorizontalAlignment="Left" Margin="1033,706,0,0" Visibility="Hidden"/>
         <Button x:Name="ButtonKapakTesti" Content="Kapak Testi" HorizontalAlignment="Left" Margin="1221,233,0,0" VerticalAlignment="Top" Height="40" Width="301" FontSize="24" Visibility="Hidden" Click="ButtonKapakTesti_Click"/>
         <Button x:Name="ButtonBaglantiyiKes" Content="Bağlantıyı Kes" HorizontalAlignment="Left" Margin="1221,153,0,0" VerticalAlignment="Top" Height="40" Width="301" FontSize="24" Visibility="Hidden" Click="ButtonBaglantiyiKes_Click"/>
         <Label x:Name="LabelPlatformDonusDurumuText" Content="Platform Durumu:" HorizontalAlignment="Left" Margin="518,509,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.75,1.676" Foreground="White" FontSize="24" Visibility="Hidden"/>
         <Label x:Name="LabelPlatformDonusDurumu" HorizontalAlignment="Left" Margin="866,509,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.75,1.676" Foreground="White" FontSize="24" Content="Bekliyor" Visibility="Hidden"/>
+        <materialDesign:PackIcon x:Name="IconPlatformDurumu" Width="50" Height="50" HorizontalAlignment="Left" Margin="1033,509,0,0" Visibility="Hidden"/>
         <Label x:Name="LabelTaramaDurumuText" Content="Tarama Durumu:" HorizontalAlignment="Left" Margin="518,603,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.75,1.676" Foreground="White" FontSize="24" Visibility="Hidden"/>
         <Label x:Name="LabelTaramaDurumu" HorizontalAlignment="Left" Margin="866,603,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.75,1.676" Foreground="White" FontSize="24" Content="Bekliyor" Visibility="Hidden"/>
+        <materialDesign:PackIcon x:Name="IconTaramaDurumu" Width="50" Height="50" HorizontalAlignment="Left" Margin="1033,603,0,0" Visibility="Hidden"/>
         <Button x:Name="ButtonTumTestler" Content="Tümünü Test Et" HorizontalAlignment="Left" Margin="1222,421,0,0" VerticalAlignment="Top" Height="40" Width="300" FontSize="24" Click="ButtonTumTestler_Click" Visibility="Hidden" RenderTransformOrigin="0.507,2.075"/>
         <TextBox x:Name="TextBoxAdim" HorizontalAlignment="Left" Margin="716,421,0,0" TextWrapping="Wrap" Height="40" VerticalAlignment="Top" Width="250" FontSize="24" Visibility="Hidden"/>
         <Label x:Name="LabelAdim" Content="Adım (mm):" HorizontalAlignment="Left" Margin="557,421,0,0" VerticalAlignment="Top" Foreground="White" FontSize="24" Visibility="Hidden"/>
@@ -29,6 +34,12 @@
         <Label x:Name="LabelTaramaAcisi" Content="Tarama Açısı:" HorizontalAlignment="Left" Margin="545,345,0,0" VerticalAlignment="Top" Foreground="White" FontSize="24" Visibility="Hidden"/>
         <TextBox x:Name="TextBoxProj" HorizontalAlignment="Left" Margin="1222,345,0,0" TextWrapping="Wrap" Height="40" VerticalAlignment="Top" Width="250" FontSize="24" Visibility="Hidden"/>
         <Label x:Name="LabelProj" HorizontalAlignment="Left" Margin="1025,345,0,0" VerticalAlignment="Top" Foreground="White" FontSize="24" Content="Projeksiyon No:" Visibility="Hidden"/>
+        <Label x:Name="LabelBagliMakine" HorizontalAlignment="Left" Margin="135,40,0,0" VerticalAlignment="Top" FontSize="24" Foreground="White"/>
+        <Button HorizontalAlignment="Left" Margin="51,35,0,0" VerticalAlignment="Top" FontSize="24" Height="50" Width="50" Click="Button_Click">
+            <StackPanel>
+                <materialDesign:PackIcon Kind="Home" Width="50" Height="50" HorizontalAlignment="Center"/>
+            </StackPanel>
+        </Button>
 
 
     </Grid>

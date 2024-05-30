@@ -41,7 +41,7 @@ namespace NDATTibbiCihaz.Presentation
             Doktor.Parola = TextBoxParola.Password;
             try
             {
-                sDoktor.GirisYapDoktor(Doktor);
+                Havuz.Doktor = sDoktor.GirisYapDoktor(Doktor);
 
                 MainWindow.SayfaGecis(new PAnaMenu());
             }

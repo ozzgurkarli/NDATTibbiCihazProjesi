@@ -29,5 +29,15 @@ namespace NDATTibbiCihaz.Presentation
         {
             MainWindow.SayfaGecis(new PMakineMenu());
         }
+
+        private void ButtonSonucEkraninaBaglan_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow.SayfaGecis(new PSonucEkraniAnaMenu());
+        }
+
+        private void Grid_Loaded(object sender, RoutedEventArgs e)
+        {
+            TextBoxHosgeldiniz.Content = $"Hoşgeldiniz, {Havuz.Doktor.AdSoyad}.";
+        }
     }
 }
