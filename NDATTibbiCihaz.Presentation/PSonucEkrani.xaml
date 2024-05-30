@@ -74,7 +74,7 @@
                                    Foreground="Black"
                                    VerticalAlignment="Top"
                                     />
-                        <TextBox VerticalAlignment="Top"
+                        <TextBox x:Name="TextBoxArama" VerticalAlignment="Top"
                                  Height="40"
                                  Margin="10,60,10,0"
                                  FontSize="24"
