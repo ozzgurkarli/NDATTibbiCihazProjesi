@@ -32,7 +32,7 @@ namespace NDATTibbiCihaz.Presentation
 
         private void ButtonSonucEkraninaBaglan_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow.SayfaGecis(new PSonucEkraniAnaMenu());
+            MainWindow.SayfaGecis(new PSonucEkrani());
         }
 
         private void Grid_Loaded(object sender, RoutedEventArgs e)
