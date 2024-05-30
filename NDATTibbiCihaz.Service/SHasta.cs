@@ -1,4 +1,5 @@
-﻿using NDATTibbiCihaz.Common;
+﻿using Microsoft.IdentityModel.Tokens;
+using NDATTibbiCihaz.Common;
 using NDATTibbiCihaz.Entity;
 using System;
 using System.Collections.Generic;
@@ -19,6 +20,10 @@ namespace NDATTibbiCihaz.Service
 
             if (long.TryParse(item.AdSoyad, out tckNo))
             {
+                if(item.AdSoyad.Length != 11)
+                {
+                    throw new Exception(message: "TCK No hatalı girildi.");
+                }
                 item.TCKimlikNo = tckNo;
                 Hasta? hasta = eHasta.OkuHastaTCKNoIle(item);
 
@@ -30,6 +35,11 @@ namespace NDATTibbiCihaz.Service
             else
             {
                 hastaList = eHasta.GetirHastaAdSoyadIle(item);
+            }
+
+            if (hastaList.IsNullOrEmpty())
+            {
+                throw new Exception(message: "Hasta bulunamadı.");
             }
 
             return hastaList;
