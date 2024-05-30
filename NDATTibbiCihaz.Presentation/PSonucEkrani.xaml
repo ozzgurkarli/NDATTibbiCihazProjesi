@@ -35,14 +35,14 @@
                 <Button x:Name="ButtonHastaBilgileri" Content="Hasta Bilgileri" FontSize="24"
                            Background="#FF0F0F2D" 
                            Foreground="White" 
-                           BorderBrush="{x:Null}"
+                           BorderBrush="{x:Null}" Click="ButtonHastaBilgileri_Click"
                            />
             </Grid>
             <Grid Grid.Column="2">
                 <Button x:Name="ButtonRapor" Content="Rapor" FontSize="24"
                     Background="#FF0F0F2D" 
                     Foreground="White" 
-                    BorderBrush="{x:Null}"
+                    BorderBrush="{x:Null}" Click="ButtonRapor_Click"
                     />
             </Grid>
             <TextBlock Grid.Column="0"
@@ -99,6 +99,10 @@
                 </Border>
 
             </Grid>
+            
+        </Grid>
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Frame x:Name="Sonuc" NavigationUIVisibility="Hidden" Height="980" Width="1520"/>
         </Grid>
     </Grid>
 </Page>

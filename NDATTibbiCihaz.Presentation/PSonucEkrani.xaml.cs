@@ -29,5 +29,20 @@ namespace NDATTibbiCihaz.Presentation
         {
 
         }
+
+        private void ButtonHastaBilgileri_Click(object sender, RoutedEventArgs e)
+        {
+            //sayfaGecis(new SAYFAADI());
+        }
+
+        private void ButtonRapor_Click(object sender, RoutedEventArgs e)
+        {
+            //sayfaGecis(new SAYFAADI());
+        }
+
+        private void sayfaGecis(object sayfa)
+        {
+            Sonuc.Content = sayfa;
+        }
     }
 }
