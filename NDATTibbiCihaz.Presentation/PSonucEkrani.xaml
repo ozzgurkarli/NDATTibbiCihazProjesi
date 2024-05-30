@@ -57,7 +57,7 @@
         <!--Sayfanın Sol altına gri menü ekle-->
         <Grid Grid.Row="1" Background="DimGray">
             <Grid.RowDefinitions>
-                <RowDefinition Height="240"/>
+                <RowDefinition Height="200"/>
                 <RowDefinition Height="200"/>
                 <RowDefinition Height="200"/>
                 <RowDefinition Height="200"/>
@@ -79,21 +79,13 @@
                                  Margin="10,60,10,0"
                                  FontSize="24"
                                  />
-                        <Button x:Name="ButtonTCKIleArama"
-                                Height="40"
-                                Background="DarkGray"
-                                Margin="10,115,10,75"
-                                Content="TCK No İle Arama"
-                                FontSize="24"
-                                Padding="0,-4,0,0" Click="ButtonTCKIleArama_Click"
-                                />
-                        <Button x:Name="ButtonAdSoyadIleArama"
+                        <Button x:Name="ButtonArama"
                             Height="40"
                             Background="DarkGray"
-                            Margin="10,150,10,0"
-                            Content="Ad Soyad İle Arama"
+                            Margin="10,100,10,0"
+                            Content="Ara"
                             FontSize="24"
-                            Padding="0,-4,0,0"
+                            Padding="0,-4,0,0" Click="ButtonArama_Click"
                                 />
                     </Grid>
                 </Border>

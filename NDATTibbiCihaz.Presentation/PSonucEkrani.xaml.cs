@@ -1,4 +1,6 @@
-﻿using System;
+﻿using NDATTibbiCihaz.Common;
+using NDATTibbiCihaz.Service;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,14 +22,12 @@ namespace NDATTibbiCihaz.Presentation
     /// </summary>
     public partial class PSonucEkrani : Page
     {
+        private readonly SHasta sHasta = new SHasta(); 
+
+
         public PSonucEkrani()
         {
             InitializeComponent();
-        }
-
-        private void ButtonTCKIleArama_Click(object sender, RoutedEventArgs e)
-        {
-
         }
 
         private void ButtonHastaBilgileri_Click(object sender, RoutedEventArgs e)
@@ -43,6 +43,18 @@ namespace NDATTibbiCihaz.Presentation
         private void sayfaGecis(object sayfa)
         {
             Sonuc.Content = sayfa;
+        }
+
+        private void ButtonArama_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                sHasta.AramaHasta(new Hasta { AdSoyad = TextBoxArama.Text });
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(caption: "Arama Hata", messageBoxText: ex.Message);
+            }
         }
     }
 }
