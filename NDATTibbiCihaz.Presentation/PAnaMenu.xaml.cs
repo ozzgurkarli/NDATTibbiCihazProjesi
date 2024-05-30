@@ -29,5 +29,10 @@ namespace NDATTibbiCihaz.Presentation
         {
             MainWindow.SayfaGecis(new PMakineMenu());
         }
+
+        private void ButtonSonucEkraninaBaglan_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow.SayfaGecis(new PSonucEkraniAnaMenu());
+        }
     }
 }

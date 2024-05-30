@@ -13,6 +13,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="MaterialDesignThemes" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\NDATTibbiCihaz.Common\NDATTibbiCihaz.Common.csproj" />
     <ProjectReference Include="..\NDATTibbiCihaz.Service\NDATTibbiCihaz.Service.csproj" />
   </ItemGroup>

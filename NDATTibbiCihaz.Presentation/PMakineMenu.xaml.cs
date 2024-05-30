@@ -44,6 +44,7 @@ namespace NDATTibbiCihaz.Presentation
                 {
                     Makine.Id = Convert.ToInt32(ComboBoxMakine.SelectedItem);
                     Makine = sMakine.OkuMakine(Makine);
+                    LabelBagliMakine.Content = "Bağlı Makine: " + Makine.Id;
                     visibilityKapakDurumu(true);
                 }
                 catch(Exception ex)
@@ -112,33 +113,45 @@ namespace NDATTibbiCihaz.Presentation
 
         private void ButtonTumTestler_Click(object sender, RoutedEventArgs e)
         {
-            if (Makine.XRayDurumu)
+            if(!string.IsNullOrWhiteSpace(TextBoxAdim.Text) && !string.IsNullOrWhiteSpace(TextBoxProj.Text) && !string.IsNullOrWhiteSpace(TextBoxTaramaAcisi.Text))
             {
-                LabelXRayDurumu.Content = "Başarılı";
+                if (Makine.XRayDurumu)
+                {
+                    LabelXRayDurumu.Content = "Başarılı";
+                }
+                else
+                {
+                    LabelXRayDurumu.Content = "Başarısız";
+                }
+
+                if (Makine.PlatformDonusDurumu)
+                {
+                    LabelPlatformDonusDurumu.Content = "Başarılı";
+                }
+                else
+                {
+                    LabelPlatformDonusDurumu.Content = "Başarısız";
+                }
+
+                if (Makine.TaramaDurumu)
+                {
+                    LabelTaramaDurumu.Content = "Başarılı";
+                }
+                else
+                {
+                    LabelTaramaDurumu.Content = "Başarısız";
+                }
             }
             else
             {
-                LabelXRayDurumu.Content = "Başarısız";
+                MessageBox.Show(caption: "Test Edilemedi.", messageBoxText: "Test edilmesi gereken tüm alanları doldurunuz.");
             }
 
-            if (Makine.PlatformDonusDurumu)
-            {
-                LabelPlatformDonusDurumu.Content = "Başarılı";
-            }
-            else
-            {
-                LabelPlatformDonusDurumu.Content = "Başarısız";
-            }
+        }
 
-            if (Makine.TaramaDurumu)
-            {
-                LabelTaramaDurumu.Content = "Başarılı";
-            }
-            else
-            {
-                LabelTaramaDurumu.Content = "Başarısız";
-            }
-
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow.SayfaGecis(new PAnaMenu());
         }
     }
 }

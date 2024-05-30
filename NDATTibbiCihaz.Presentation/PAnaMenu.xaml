@@ -10,6 +10,6 @@
 
     <Grid Background="Black">
         <Button x:Name="ButtonMakineyeBaglan" Content="MAKINEYE BAĞLAN" HorizontalAlignment="Left" Margin="600,402,0,0" VerticalAlignment="Top" Height="250" Width="250" FontSize="24" Click="ButtonMakineyeBaglan_Click"/>
-        <Button Content="SONUÇ EKRANI" HorizontalAlignment="Right" Margin="0,402,600,0" VerticalAlignment="Top" Height="250" Width="250" FontSize="24"/>
+        <Button x:Name="ButtonSonucEkraninaBaglan" Content="SONUÇ EKRANI" HorizontalAlignment="Right" Margin="0,402,600,0" VerticalAlignment="Top" Height="250" Width="250" FontSize="24" Click="ButtonSonucEkraninaBaglan_Click"/>
     </Grid>
 </Page>
