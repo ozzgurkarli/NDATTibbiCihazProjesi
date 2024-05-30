@@ -32,17 +32,17 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <Grid Grid.Column="1">
-                <Button Content="Hasta" FontSize="24"
+                <Button x:Name="ButtonHastaBilgileri" Content="Hasta Bilgileri" FontSize="24"
                            Background="#FF0F0F2D" 
                            Foreground="White" 
-                           BorderBrush="{x:Null}" Click="Button_Click"
+                           BorderBrush="{x:Null}"
                            />
             </Grid>
             <Grid Grid.Column="2">
-                <Button Content="Rapor" FontSize="24"
+                <Button x:Name="ButtonRapor" Content="Rapor" FontSize="24"
                     Background="#FF0F0F2D" 
                     Foreground="White" 
-                    BorderBrush="{x:Null}" Click="Button_Click"
+                    BorderBrush="{x:Null}"
                     />
             </Grid>
             <TextBlock Grid.Column="0"
@@ -79,15 +79,15 @@
                                  Margin="10,60,10,0"
                                  FontSize="24"
                                  />
-                        <Button
+                        <Button x:Name="ButtonTCKIleArama"
                                 Height="40"
                                 Background="DarkGray"
                                 Margin="10,115,10,75"
                                 Content="TCK No İle Arama"
                                 FontSize="24"
-                                Padding="0,-4,0,0"
+                                Padding="0,-4,0,0" Click="ButtonTCKIleArama_Click"
                                 />
-                        <Button
+                        <Button x:Name="ButtonAdSoyadIleArama"
                             Height="40"
                             Background="DarkGray"
                             Margin="10,150,10,0"
