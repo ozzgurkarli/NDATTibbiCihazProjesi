@@ -1,4 +1,5 @@
-﻿using NDATTibbiCihaz.Common;
+﻿using MaterialDesignThemes.Wpf;
+using NDATTibbiCihaz.Common;
 using NDATTibbiCihaz.Service;
 using System;
 using System.Collections.Generic;
@@ -60,6 +61,8 @@ namespace NDATTibbiCihaz.Presentation
 
         private void ButtonKapakTesti_Click(object sender, RoutedEventArgs e)
         {
+            durumIcon(IconKapakDurumu, Makine.KapakDurumu);
+
             if (Makine.KapakDurumu)
             {
                 LabelKapakDurumu.Content = "Başarılı";
@@ -106,6 +109,22 @@ namespace NDATTibbiCihaz.Presentation
             }
         }
 
+        private void durumIcon(PackIcon label, bool flag)
+        {
+            label.Visibility = Visibility.Visible;
+
+            if (flag)
+            {
+                label.Kind = PackIconKind.Check;
+                label.Foreground = Brushes.Green;
+            }
+            else
+            {
+                label.Kind = PackIconKind.Error;
+                label.Foreground = Brushes.Red;
+            }
+        }
+
         private void ButtonBaglantiyiKes_Click(object sender, RoutedEventArgs e)
         {
             MainWindow.SayfaGecis(new PMakineMenu());
@@ -115,6 +134,10 @@ namespace NDATTibbiCihaz.Presentation
         {
             if(!string.IsNullOrWhiteSpace(TextBoxAdim.Text) && !string.IsNullOrWhiteSpace(TextBoxProj.Text) && !string.IsNullOrWhiteSpace(TextBoxTaramaAcisi.Text))
             {
+                durumIcon(IconXRayDurumu, Makine.XRayDurumu);
+                durumIcon(IconTaramaDurumu, Makine.TaramaDurumu);
+                durumIcon(IconPlatformDurumu, Makine.PlatformDonusDurumu);
+
                 if (Makine.XRayDurumu)
                 {
                     LabelXRayDurumu.Content = "Başarılı";
