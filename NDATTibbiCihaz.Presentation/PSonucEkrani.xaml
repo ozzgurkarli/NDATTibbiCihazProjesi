@@ -41,10 +41,10 @@
                         />
             </Grid>
             <Grid Grid.Column="2">
-                <Button x:Name="ButtonRapor" Content="Rapor" FontSize="24"
+                <Button x:Name="ButtonCiktilar" Content="Çıktılar" FontSize="24"
                     Background="#FF0F0F2D" 
                     Foreground="White" 
-                    BorderBrush="{x:Null}" Click="ButtonRapor_Click"
+                    BorderBrush="{x:Null}" Click="ButtonCiktilar_Click"
                     />
             </Grid>
             <TextBlock Grid.Column="0"

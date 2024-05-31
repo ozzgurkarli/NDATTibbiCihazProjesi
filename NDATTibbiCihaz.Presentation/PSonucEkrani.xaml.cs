@@ -36,9 +36,9 @@ namespace NDATTibbiCihaz.Presentation
             sayfaGecis(new PHastaBilgileri());
         }
 
-        private void ButtonRapor_Click(object sender, RoutedEventArgs e)
+        private void ButtonCiktilar_Click(object sender, RoutedEventArgs e)
         {
-            //sayfaGecis(new SAYFAADI());
+            sayfaGecis(new PCiktilar());
         }
 
         private void sayfaGecis(object sayfa)
