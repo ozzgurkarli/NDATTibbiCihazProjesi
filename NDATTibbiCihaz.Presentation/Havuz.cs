@@ -10,5 +10,6 @@ namespace NDATTibbiCihaz.Presentation
     internal static class Havuz
     {
         public static Doktor Doktor { get; set; }
+        public static Hasta Hasta { get; set; }
     }
 }

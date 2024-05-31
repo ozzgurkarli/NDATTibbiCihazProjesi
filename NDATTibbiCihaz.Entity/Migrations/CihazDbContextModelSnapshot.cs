@@ -50,7 +50,7 @@ namespace NDATTibbiCihaz.Entity.Migrations
 
                     b.HasIndex("HastaTCKimlikNo");
 
-                    b.ToTable("Ciktilar");
+                    b.ToTable("Ciktilar", (string)null);
                 });
 
             modelBuilder.Entity("NDATTibbiCihaz.Common.Doktor", b =>
@@ -71,7 +71,7 @@ namespace NDATTibbiCihaz.Entity.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Doktorlar");
+                    b.ToTable("Doktorlar", (string)null);
                 });
 
             modelBuilder.Entity("NDATTibbiCihaz.Common.Gorsel", b =>
@@ -96,7 +96,7 @@ namespace NDATTibbiCihaz.Entity.Migrations
 
                     b.HasIndex("CiktiId");
 
-                    b.ToTable("Gorseller");
+                    b.ToTable("Gorseller", (string)null);
                 });
 
             modelBuilder.Entity("NDATTibbiCihaz.Common.Hasta", b =>
@@ -125,7 +125,7 @@ namespace NDATTibbiCihaz.Entity.Migrations
 
                     b.HasKey("TCKimlikNo");
 
-                    b.ToTable("Hastalar");
+                    b.ToTable("Hastalar", (string)null);
                 });
 
             modelBuilder.Entity("NDATTibbiCihaz.Common.Makine", b =>
@@ -153,7 +153,7 @@ namespace NDATTibbiCihaz.Entity.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Makineler");
+                    b.ToTable("Makineler", (string)null);
                 });
 
             modelBuilder.Entity("NDATTibbiCihaz.Common.Rapor", b =>
@@ -179,7 +179,7 @@ namespace NDATTibbiCihaz.Entity.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Raporlar");
+                    b.ToTable("Raporlar", (string)null);
                 });
 
             modelBuilder.Entity("NDATTibbiCihaz.Common.Cikti", b =>

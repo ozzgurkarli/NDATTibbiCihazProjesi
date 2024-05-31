@@ -22,8 +22,9 @@ namespace NDATTibbiCihaz.Presentation
     /// </summary>
     public partial class PSonucEkrani : Page
     {
-        private readonly SHasta sHasta = new SHasta(); 
+        private readonly SHasta sHasta = new SHasta();
 
+        private List<Hasta> HastaList = new List<Hasta>();
 
         public PSonucEkrani()
         {
@@ -49,11 +50,26 @@ namespace NDATTibbiCihaz.Presentation
         {
             try
             {
-                sHasta.AramaHasta(new Hasta { AdSoyad = TextBoxArama.Text });
+                List<Hasta> hastaList = sHasta.AramaHasta(new Hasta { AdSoyad = TextBoxArama.Text });
+                HastaList = hastaList;
+
+                hastaList.ForEach(x => x.AdSoyad = x.AdSoyad + "\n" + x.TCKimlikNo);
+
+                ListViewHastalar.ItemsSource = hastaList.Select(x=> x.AdSoyad);
+
+                hastaList.ForEach(x => x.AdSoyad = x.AdSoyad.Substring(0, x.AdSoyad.Length - 12));
             }
             catch(Exception ex)
             {
                 MessageBox.Show(caption: "Arama Hata", messageBoxText: ex.Message);
+            }
+        }
+
+        private void ListViewHastalar_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if(ListViewHastalar.SelectedIndex != -1)
+            {
+                Havuz.Hasta = HastaList[ListViewHastalar.SelectedIndex];
             }
         }
     }
