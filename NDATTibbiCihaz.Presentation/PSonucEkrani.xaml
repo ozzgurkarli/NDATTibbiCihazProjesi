@@ -32,11 +32,13 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <Grid Grid.Column="1">
-                <Button x:Name="ButtonHastaBilgileri" Content="Hasta Bilgileri" FontSize="24"
-                           Background="#FF0F0F2D" 
-                           Foreground="White" 
-                           BorderBrush="{x:Null}" Click="ButtonHastaBilgileri_Click"
-                           />
+                <Button x:Name="ButtonHastaBilgileri" 
+                        Content="Hasta Bilgileri" FontSize="24"
+                        Background="#FF0F0F2D" 
+                        Foreground="White" 
+                        BorderBrush="{x:Null}" 
+                        Click="ButtonHastaBilgileri_Click"
+                        />
             </Grid>
             <Grid Grid.Column="2">
                 <Button x:Name="ButtonRapor" Content="Rapor" FontSize="24"
@@ -91,20 +93,39 @@
                 </Border>
 
             </Grid>
-            <ListView x:Name="ListViewHastalar" Grid.Row="1" Height="770" VerticalAlignment="Top" Margin="0,10,0,0" Grid.RowSpan="4" FontSize="24" SelectionChanged="ListViewHastalar_SelectionChanged">
+            <ListView Background="DimGray" 
+                      x:Name="ListViewHastalar" 
+                      Grid.Row="1" Height="780" 
+                      VerticalAlignment="Top" 
+                      Grid.RowSpan="4" 
+                      FontSize="24" 
+                      SelectionChanged="ListViewHastalar_SelectionChanged" 
+                      BorderBrush="{x:Null}">
                 <ListView.ItemContainerStyle>
                     <Style TargetType="ListViewItem">
                         <Setter Property="Template">
                             <Setter.Value>
                                 <ControlTemplate TargetType="ListViewItem">
                                     <StackPanel>
-                                        <Border x:Name="border" Background="Transparent" BorderBrush="Black" BorderThickness="0,0,0,1" Margin="0,0,0,5">
-                                            <ContentPresenter />
+                                        <Border x:Name="border" 
+                                                Background="LightGray" 
+                                                BorderBrush="Black" 
+                                                BorderThickness="0,0,0,1" 
+                                                Margin="5,5,5,0"
+                                                CornerRadius="5"
+                                                >
+                                            <Border Margin="8,0,0,0">
+                                                <ContentPresenter />
+                                            </Border>
+                                            
                                         </Border>
                                     </StackPanel>
                                     <ControlTemplate.Triggers>
-                                        <Trigger Property="IsSelected" Value="True">
-                                            <Setter TargetName="border" Property="Background" Value="LightBlue"/>
+                                        <Trigger Property="IsSelected" 
+                                                 Value="True">
+                                            <Setter TargetName="border" 
+                                                    Property="Background" 
+                                                    Value="LightBlue"/>
                                         </Trigger>
                                     </ControlTemplate.Triggers>
                                 </ControlTemplate>
@@ -117,7 +138,9 @@
 
         </Grid>
         <Grid Grid.Row="1" Grid.Column="1">
-            <Frame x:Name="Sonuc" NavigationUIVisibility="Hidden" Height="980" Width="1520"/>
+            <Frame x:Name="Sonuc" 
+                   NavigationUIVisibility="Hidden" 
+                   Height="980" Width="1520"/>
         </Grid>
     </Grid>
 </Page>

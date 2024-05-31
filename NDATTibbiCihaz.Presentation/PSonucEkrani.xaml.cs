@@ -33,7 +33,7 @@ namespace NDATTibbiCihaz.Presentation
 
         private void ButtonHastaBilgileri_Click(object sender, RoutedEventArgs e)
         {
-            //sayfaGecis(new SAYFAADI());
+            sayfaGecis(new PHastaBilgileri());
         }
 
         private void ButtonRapor_Click(object sender, RoutedEventArgs e)
