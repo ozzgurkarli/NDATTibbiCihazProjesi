@@ -23,6 +23,12 @@ namespace NDATTibbiCihaz.Presentation
         public PHastaBilgileri()
         {
             InitializeComponent();
+            Hasta_TCKNO.Content = Havuz.Hasta.TCKimlikNo;
+            Hasta_Ad.Content = Havuz.Hasta.AdSoyad;
+            hasta_DogumTarihi.Content = Havuz.Hasta.DogumTarihi;
+            Hasta_SonZiyaret.Content = "Null";
+            Hasta_CiktiSayisi.Content = "0";
         }
+        
     }
 }
