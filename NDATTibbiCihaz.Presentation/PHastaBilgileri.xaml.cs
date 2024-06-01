@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.IdentityModel.Tokens;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -26,8 +27,8 @@ namespace NDATTibbiCihaz.Presentation
             Hasta_TCKNO.Content = Havuz.Hasta.TCKimlikNo;
             Hasta_Ad.Content = Havuz.Hasta.AdSoyad;
             hasta_DogumTarihi.Content = Havuz.Hasta.DogumTarihi;
-            Hasta_SonZiyaret.Content = "Null";
-            Hasta_CiktiSayisi.Content = "0";
+            Hasta_SonZiyaret.Content = (Havuz.Ciktilar != null && Havuz.Ciktilar.Any()) ? Havuz.Ciktilar[0].CiktiTarihi : "Son ziyaret yok.";
+            Hasta_CiktiSayisi.Content = (Havuz.Ciktilar != null && Havuz.Ciktilar.Any()) ? Havuz.Ciktilar.Count : "Çıktı yok.";
         }
         
     }

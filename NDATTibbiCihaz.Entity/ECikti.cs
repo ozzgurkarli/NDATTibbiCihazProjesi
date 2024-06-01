@@ -1,4 +1,5 @@
-﻿using NDATTibbiCihaz.Common;
+﻿using Microsoft.EntityFrameworkCore;
+using NDATTibbiCihaz.Common;
 using NDATTibbiCihaz.Entity.Config;
 using System;
 using System.Collections.Generic;
@@ -14,7 +15,7 @@ namespace NDATTibbiCihaz.Entity
 
         public List<Cikti> GetirCikti(Cikti item)
         {
-            return db.Ciktilar.Where(x => x.HastaTCKimlikNo == item.HastaTCKimlikNo).ToList();
+            return db.Ciktilar.Where(x => x.HastaTCKimlikNo == item.HastaTCKimlikNo).Include(x => x.Gorseller).ToList();
         }
     }
 }

@@ -23,6 +23,7 @@ namespace NDATTibbiCihaz.Presentation
     public partial class PSonucEkrani : Page
     {
         private readonly SHasta sHasta = new SHasta();
+        private readonly SCikti sCikti = new SCikti();
 
         private List<Hasta> HastaList = new List<Hasta>();
 
@@ -70,7 +71,9 @@ namespace NDATTibbiCihaz.Presentation
             if(ListViewHastalar.SelectedIndex != -1)
             {
                 Havuz.Hasta = HastaList[ListViewHastalar.SelectedIndex];
+                Havuz.Ciktilar = sCikti.GetirCiktilarTCKIle(new Cikti { HastaTCKimlikNo = Havuz.Hasta.TCKimlikNo });
                 gorunurlukButonlar(true);
+                sayfaGecis(new PHastaBilgileri());
             }
         }
 

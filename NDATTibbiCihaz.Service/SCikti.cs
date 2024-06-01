@@ -17,11 +17,6 @@ namespace NDATTibbiCihaz.Service
         {
             List<Cikti> ciktiList = eCikti.GetirCikti(item);
 
-            if (ciktiList.IsNullOrEmpty())
-            {
-                throw new Exception(message: "Hastaya ait çıktı bulunamadı.");
-            }
-
             return ciktiList.OrderByDescending(x => x.CiktiTarihi).ToList();
         }
     }

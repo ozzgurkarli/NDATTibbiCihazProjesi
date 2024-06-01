@@ -1,4 +1,5 @@
-﻿using NDATTibbiCihaz.Common;
+﻿using Microsoft.EntityFrameworkCore;
+using NDATTibbiCihaz.Common;
 using NDATTibbiCihaz.Entity.Config;
 using System;
 using System.Collections.Generic;

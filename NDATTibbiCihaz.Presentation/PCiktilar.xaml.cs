@@ -1,4 +1,5 @@
-﻿using NDATTibbiCihaz.Common;
+﻿using Microsoft.IdentityModel.Tokens;
+using NDATTibbiCihaz.Common;
 using NDATTibbiCihaz.Service;
 using System;
 using System.Collections.Generic;
@@ -33,15 +34,13 @@ namespace NDATTibbiCihaz.Presentation
 
         private void Grid_Loaded(object sender, RoutedEventArgs e)
         {
-            try
+            if (!Havuz.Ciktilar.IsNullOrEmpty())
             {
-                CiktiList = sCikti.GetirCiktilarTCKIle(new Cikti { HastaTCKimlikNo = Havuz.Hasta.TCKimlikNo });
-
                 ListViewCiktilar.ItemsSource = CiktiList;
             }
-            catch(Exception ex)
+            else
             {
-                MessageBox.Show(caption: "Çıktı Hatası", messageBoxText: ex.Message);
+                MessageBox.Show(caption: "Çıktı Hatası", messageBoxText: "Hastaya ait çıktı bulunamadı.");
             }
         }
     }

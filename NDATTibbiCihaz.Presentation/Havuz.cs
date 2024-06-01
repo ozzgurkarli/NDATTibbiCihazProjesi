@@ -11,5 +11,7 @@ namespace NDATTibbiCihaz.Presentation
     {
         public static Doktor Doktor { get; set; }
         public static Hasta Hasta { get; set; }
+
+        public static List<Cikti> Ciktilar { get; set; }
     }
 }
