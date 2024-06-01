@@ -70,6 +70,21 @@ namespace NDATTibbiCihaz.Presentation
             if(ListViewHastalar.SelectedIndex != -1)
             {
                 Havuz.Hasta = HastaList[ListViewHastalar.SelectedIndex];
+                gorunurlukButonlar(true);
+            }
+        }
+
+        private void gorunurlukButonlar(bool flag)
+        {
+            if (flag)
+            {
+                ButtonHastaBilgileri.Visibility = Visibility.Visible;
+                ButtonCiktilar.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                ButtonHastaBilgileri.Visibility = Visibility.Hidden;
+                ButtonCiktilar.Visibility = Visibility.Hidden;
             }
         }
     }

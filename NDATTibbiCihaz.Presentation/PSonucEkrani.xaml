@@ -35,6 +35,7 @@
                 <Button x:Name="ButtonHastaBilgileri" 
                         Content="Hasta Bilgileri" FontSize="24"
                         Background="#FF0F0F2D" 
+                        Visibility="Hidden"
                         Foreground="White" 
                         BorderBrush="{x:Null}" 
                         Click="ButtonHastaBilgileri_Click"
@@ -44,6 +45,7 @@
                 <Button x:Name="ButtonCiktilar" Content="Çıktılar" FontSize="24"
                     Background="#FF0F0F2D" 
                     Foreground="White" 
+                    Visibility="Hidden"
                     BorderBrush="{x:Null}" Click="ButtonCiktilar_Click"
                     />
             </Grid>

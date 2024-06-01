@@ -8,14 +8,13 @@
       d:DesignHeight="980" d:DesignWidth="1520"
       Title="PCiktilar">
 
-    <Grid>
+    <Grid Loaded="Grid_Loaded">
         <ListView Background="DimGray" 
-          x:Name="ListViewHastalar" 
+          x:Name="ListViewCiktilar" 
           Grid.Row="1" Height="780" Width="520"
           VerticalAlignment="Center" 
           Grid.RowSpan="4" 
           FontSize="24" 
-          SelectionChanged="ListViewHastalar_SelectionChanged" 
           BorderBrush="{x:Null}">
             <ListView.ItemContainerStyle>
                 <Style TargetType="ListViewItem">

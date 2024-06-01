@@ -1,4 +1,6 @@
-﻿using System;
+﻿using NDATTibbiCihaz.Common;
+using NDATTibbiCihaz.Service;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +22,27 @@ namespace NDATTibbiCihaz.Presentation
     /// </summary>
     public partial class PCiktilar : Page
     {
+        private readonly SCikti sCikti = new SCikti();
+
+        private List<Cikti> CiktiList = new List<Cikti>();
+
         public PCiktilar()
         {
             InitializeComponent();
+        }
+
+        private void Grid_Loaded(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                CiktiList = sCikti.GetirCiktilarTCKIle(new Cikti { HastaTCKimlikNo = Havuz.Hasta.TCKimlikNo });
+
+                ListViewCiktilar.ItemsSource = CiktiList;
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(caption: "Çıktı Hatası", messageBoxText: ex.Message);
+            }
         }
     }
 }
