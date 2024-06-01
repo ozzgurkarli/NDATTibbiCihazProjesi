@@ -50,7 +50,7 @@
                     />
             </Grid>
             <TextBlock Grid.Column="0"
-                       Text="EzDent-i" 
+                       Text="Optomo" 
                        Foreground="White"
                        VerticalAlignment="Center"
                        HorizontalAlignment="Center"
