@@ -90,5 +90,10 @@ namespace NDATTibbiCihaz.Presentation
                 ButtonCiktilar.Visibility = Visibility.Hidden;
             }
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow.SayfaGecis(new PAnaMenu());
+        }
     }
 }

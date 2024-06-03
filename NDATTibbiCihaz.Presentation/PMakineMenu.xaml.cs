@@ -138,6 +138,11 @@ namespace NDATTibbiCihaz.Presentation
                 durumIcon(IconTaramaDurumu, Makine.TaramaDurumu);
                 durumIcon(IconPlatformDurumu, Makine.PlatformDonusDurumu);
 
+                if(Makine.XRayDurumu && Makine.PlatformDonusDurumu && Makine.TaramaDurumu)
+                {
+                    ButtonCalistir.Visibility = Visibility.Visible;
+                }
+
                 if (Makine.XRayDurumu)
                 {
                     LabelXRayDurumu.Content = "Başarılı";
@@ -175,6 +180,11 @@ namespace NDATTibbiCihaz.Presentation
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             MainWindow.SayfaGecis(new PAnaMenu());
+        }
+
+        private void ButtonCalistir_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

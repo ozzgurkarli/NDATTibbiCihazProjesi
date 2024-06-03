@@ -40,6 +40,7 @@
                 <materialDesign:PackIcon Kind="Home" Width="50" Height="50" HorizontalAlignment="Center"/>
             </StackPanel>
         </Button>
+        <Button x:Name="ButtonCalistir" Content="Çalıştır" HorizontalAlignment="Left" Margin="1221,853,0,0" VerticalAlignment="Top" Height="40" Width="301" FontSize="24" Click="ButtonCalistir_Click" Visibility="Hidden"/>
 
 
     </Grid>
