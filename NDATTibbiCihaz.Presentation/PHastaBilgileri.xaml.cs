@@ -27,7 +27,7 @@ namespace NDATTibbiCihaz.Presentation
             Hasta_TCKNO.Content = Havuz.Hasta.TCKimlikNo;
             Hasta_Ad.Content = Havuz.Hasta.AdSoyad;
             hasta_DogumTarihi.Content = Havuz.Hasta.DogumTarihi;
-            Hasta_SonZiyaret.Content = (Havuz.Ciktilar != null && Havuz.Ciktilar.Any()) ? Havuz.Ciktilar[0].CiktiTarihi : "Son ziyaret yok.";
+            Hasta_SonZiyaret.Content = (Havuz.Ciktilar != null && Havuz.Ciktilar.Any()) ? $"{Havuz.Ciktilar[0].CiktiTarihi.Day} {NDATTibbiCihaz.Common.Method.OrtakMetodlar.AyBul(Havuz.Ciktilar[0].CiktiTarihi.Month)} {Havuz.Ciktilar[0].CiktiTarihi.Year}" : "Son ziyaret yok.";
             Hasta_CiktiSayisi.Content = (Havuz.Ciktilar != null && Havuz.Ciktilar.Any()) ? Havuz.Ciktilar.Count : "Çıktı yok.";
         }
         

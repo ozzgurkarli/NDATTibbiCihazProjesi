@@ -10,12 +10,12 @@
 
     <Grid Loaded="Grid_Loaded">
         <ListView Background="DimGray" 
-          x:Name="ListViewCiktilar" 
-          Grid.Row="1" Height="780" Width="520"
-          VerticalAlignment="Center" 
-          Grid.RowSpan="4" 
+          x:Name="ListViewCiktilar" Height="980
+                  " Width="470"
+          HorizontalAlignment="Left"
+          VerticalAlignment="Top" 
           FontSize="24" 
-          BorderBrush="{x:Null}">
+          BorderBrush="{x:Null}" Margin="0,0,0,0" SelectionChanged="ListViewCiktilar_SelectionChanged">
             <ListView.ItemContainerStyle>
                 <Style TargetType="ListViewItem">
                     <Setter Property="Template">
@@ -25,8 +25,8 @@
                                     <Border x:Name="border" 
                                     Background="LightGray" 
                                     BorderBrush="Black" 
-                                    BorderThickness="0,0,0,1" 
-                                    Margin="5,5,5,0"
+                                    BorderThickness="0,0,5,5" 
+                                    Margin="30,20,30,20"
                                     CornerRadius="5"
                                     >
                                         <Border Margin="8,0,0,0">
@@ -50,6 +50,9 @@
             </ListView.ItemContainerStyle>
 
         </ListView>
+        <Grid Background="AntiqueWhite" Height="980" Width="1050" HorizontalAlignment="Right">
+            <Frame x:Name="CiktiFrame" NavigationUIVisibility="Hidden"/>
+        </Grid>
 
     </Grid>
 </Page>

@@ -1,5 +1,6 @@
 ﻿using Microsoft.IdentityModel.Tokens;
 using NDATTibbiCihaz.Common;
+using NDATTibbiCihaz.Entity;
 using NDATTibbiCihaz.Service;
 using System;
 using System.Collections.Generic;
@@ -25,8 +26,6 @@ namespace NDATTibbiCihaz.Presentation
     {
         private readonly SCikti sCikti = new SCikti();
 
-        private List<Cikti> CiktiList = new List<Cikti>();
-
         public PCiktilar()
         {
             InitializeComponent();
@@ -36,11 +35,32 @@ namespace NDATTibbiCihaz.Presentation
         {
             if (!Havuz.Ciktilar.IsNullOrEmpty())
             {
-                ListViewCiktilar.ItemsSource = CiktiList;
+                List<string> ciktiList = new List<string>();
+
+                foreach(Cikti item in Havuz.Ciktilar)
+                {
+                    string temp = $"\n{item.CiktiTarihi.Day} {NDATTibbiCihaz.Common.Method.OrtakMetodlar.AyBul(item.CiktiTarihi.Month)} {item.CiktiTarihi.Year} Tarihli Çıktı\n";
+
+                    if(item.RaporId == 0)
+                    {
+                        temp += "RAPOR YOK";
+                    }
+                    ciktiList.Add(temp);
+                }
+
+                ListViewCiktilar.ItemsSource = ciktiList;
             }
             else
             {
                 MessageBox.Show(caption: "Çıktı Hatası", messageBoxText: "Hastaya ait çıktı bulunamadı.");
+            }
+        }
+
+        private void ListViewCiktilar_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if(ListViewCiktilar.SelectedIndex != -1)
+            {
+                CiktiFrame.Content = new PCiktiDetaylari(Havuz.Ciktilar[ListViewCiktilar.SelectedIndex]);
             }
         }
     }
