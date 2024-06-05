@@ -21,8 +21,12 @@ namespace NDATTibbiCihaz.Presentation
     /// <summary>
     /// Interaction logic for PCiktiDetaylari.xaml
     /// </summary>
+    /// 
+
     public partial class PCiktiDetaylari : Page
+
     {
+        private int currentIndex = 0;
         private readonly SRapor sRapor = new SRapor();
         Cikti Cikti = new Cikti();
         Rapor Rapor = new Rapor();
@@ -61,9 +65,102 @@ namespace NDATTibbiCihaz.Presentation
             CDerece1.Content = Cikti.DonulenDerece;
             RId.Content = Rapor.Id!=0?Rapor.Id:null;
             RYorum.Content = !string.IsNullOrWhiteSpace(Rapor.Yorum)?Rapor.Yorum:"Rapor Bulunamadı";
-            string url = Cikti.Gorseller[0].PathGorsel;
+
+
+
+
+            List<string> imagePaths = new List<string>();
+
+            foreach (var gorsel in Cikti.Gorseller.Where(g => g.CiktiId ==Cikti.Id))
+            {
+                imagePaths.Add(gorsel.PathGorsel);
+            }
+            if (Cikti.Gorseller == null || Cikti.Gorseller.Count == 0)
+            {
+                MessageBox.Show(caption: "görsel Hatası", messageBoxText: "Hastaya ait görsel bulunamadı.");
+                SagaGorsel.Visibility= Visibility.Hidden;
+                SolaGorsel.Visibility= Visibility.Hidden;
+                Sayac.Visibility= Visibility.Hidden;
+                return;
+            }else
+            {
+                string url = imagePaths[0];
+
+                PImage.Source = new BitmapImage(new Uri(url));
+                Sayac.Content = (currentIndex + 1) + "/" + (Cikti.Gorseller.Count);
+            }
+
+
+
+           
+        }
+
+        
+
+        private void SagaGorsel_Click(object sender, RoutedEventArgs e)
+        {
+            currentIndex++;
+            List<string> imagePaths = new List<string>();
+
+            foreach (var gorsel in Cikti.Gorseller.Where(g => g.CiktiId == Cikti.Id))
+            {
+                imagePaths.Add(gorsel.PathGorsel);
+
+            }
+            if (Cikti.Gorseller == null || Cikti.Gorseller.Count == 0)
+            {
+                MessageBox.Show(caption: "görsel Hatası", messageBoxText: "Hastaya ait görsel bulunamadı.");
+                return;
+            }
+
+
+
+            // Wrap around if reaching the end
+            if (currentIndex >= Cikti.Gorseller.Count)
+            {
+                currentIndex = 0;
+            }
+
+
+            string url = imagePaths[currentIndex];
             
+
             PImage.Source = new BitmapImage(new Uri(url));
+            Sayac.Content = (currentIndex + 1) + "/" + (Cikti.Gorseller.Count);
+        }
+
+        private void SolaGorsel_Click(object sender, RoutedEventArgs e)
+        {
+            currentIndex--;
+            List<string> imagePaths = new List<string>();
+
+            foreach (var gorsel in Cikti.Gorseller.Where(g => g.CiktiId == Cikti.Id))
+            {
+                imagePaths.Add(gorsel.PathGorsel);
+
+            }
+            if (Cikti.Gorseller == null || Cikti.Gorseller.Count == 0)
+            {
+                MessageBox.Show(caption: "görsel Hatası", messageBoxText: "Hastaya ait görsel bulunamadı.");
+                return;
+            }
+
+           
+
+            // Wrap around if reaching the end
+            if (currentIndex < 0)
+            {
+                currentIndex = Cikti.Gorseller.Count-1;
+                Sayac.Content= Cikti.Gorseller.Count + "/" + (Cikti.Gorseller.Count);
+            }
+            else if(currentIndex==0)
+            {
+                Sayac.Content = (currentIndex +1) + "/" + (Cikti.Gorseller.Count);
+            }
+
+            string url = imagePaths[currentIndex];
+            PImage.Source = new BitmapImage(new Uri(url));
+            
         }
     }
 }
