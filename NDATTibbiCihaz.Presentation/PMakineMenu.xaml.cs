@@ -184,7 +184,7 @@ namespace NDATTibbiCihaz.Presentation
 
         private void ButtonCalistir_Click(object sender, RoutedEventArgs e)
         {
-
+            MainWindow.SayfaGecis(new PMakineCiktiAl());
         }
     }
 }
