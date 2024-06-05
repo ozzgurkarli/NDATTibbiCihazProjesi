@@ -4,6 +4,7 @@ using NDATTibbiCihaz.Entity;
 using NDATTibbiCihaz.Service;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Security.Policy;
 using System.Text;
@@ -16,7 +17,6 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace NDATTibbiCihaz.Presentation
 {
@@ -70,7 +70,7 @@ namespace NDATTibbiCihaz.Presentation
 
             if (gorselButtonVisibility(!Cikti.Gorseller.IsNullOrEmpty()))
             {
-                PImage.Source = new BitmapImage(new Uri(Cikti.Gorseller[index].PathGorsel, UriKind.Relative));
+                PImage.Source = new BitmapImage(new Uri(Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), @"..\..\.." + Cikti.Gorseller[index].PathGorsel))));
                 Sayac.Content = (index + 1) + "/" + (Cikti.Gorseller.Count);
             }
             else
@@ -109,7 +109,7 @@ namespace NDATTibbiCihaz.Presentation
                 index = (index - 1).Equals(-1) ? Cikti.Gorseller.Count - 1 : index - 1;
             }
 
-            PImage.Source = new BitmapImage(new Uri(Cikti.Gorseller[index].PathGorsel, UriKind.Relative));
+            PImage.Source = new BitmapImage(new Uri(Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), @"..\..\.." + Cikti.Gorseller[index].PathGorsel))));
             Sayac.Content = (index + 1) + "/" + (Cikti.Gorseller.Count);
         }
 
