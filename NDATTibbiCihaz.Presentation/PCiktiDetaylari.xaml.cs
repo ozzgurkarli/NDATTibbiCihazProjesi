@@ -1,4 +1,5 @@
 ﻿using NDATTibbiCihaz.Common;
+using NDATTibbiCihaz.Entity;
 using NDATTibbiCihaz.Service;
 using System;
 using System.Collections.Generic;
@@ -25,6 +26,8 @@ namespace NDATTibbiCihaz.Presentation
         private readonly SRapor sRapor = new SRapor();
         Cikti Cikti = new Cikti();
         Rapor Rapor = new Rapor();
+        Gorsel Gorsel = new Gorsel();
+        
 
         public PCiktiDetaylari()
         {
@@ -43,6 +46,24 @@ namespace NDATTibbiCihaz.Presentation
             {
                 MessageBox.Show(caption: "Çıktı Hatası", messageBoxText: ex.Message);
             }
+           
+            
+            
+            
+            
+        }
+
+        private void Grid_Loaded(object sender, RoutedEventArgs e)
+        {
+            CTckno1.Content = Cikti.HastaTCKimlikNo;
+            CAdSoyad1.Content = Havuz.Hasta.AdSoyad;
+            CTarih1.Content = Cikti.CiktiTarihi;
+            CDerece1.Content = Cikti.DonulenDerece;
+            RId.Content = Rapor.Id!=0?Rapor.Id:null;
+            RYorum.Content = !string.IsNullOrWhiteSpace(Rapor.Yorum)?Rapor.Yorum:"Rapor Bulunamadı";
+            string url = Cikti.Gorseller[0].PathGorsel;
+            
+            PImage.Source = new BitmapImage(new Uri(url));
         }
     }
 }
