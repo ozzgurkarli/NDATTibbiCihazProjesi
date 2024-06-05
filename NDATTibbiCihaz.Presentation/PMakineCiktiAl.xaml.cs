@@ -26,43 +26,73 @@ namespace NDATTibbiCihaz.Presentation
     public partial class PMakineCiktiAl : Page
     {
         private readonly SCikti sCikti = new SCikti();
+        private readonly SHasta sHasta = new SHasta();
+
         public PMakineCiktiAl()
         {
             InitializeComponent();
         }
 
+        Hasta Hasta = new Hasta();
+
+        List<string> FilePaths = new List<string>();
+        List<string> FileNames = new List<string>();
+
+        string Path3D = null;
+        string Name3D = null;
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            OpenFileDialog fileDialog3D = new OpenFileDialog();
             OpenFileDialog fileDialogImage = new OpenFileDialog();
-
-            //fileDialog3D.Filter =
 
             fileDialogImage.Filter = "BMP|*.bmp|GIF|*.gif|JPG|*.jpg;*.jpeg|PNG|*.png|TIFF|*.tif;*.tiff|" + "All Graphics Types|*.bmp;*.jpg;*.jpeg;*.png;*.tif;*.tiff";
             fileDialogImage.Multiselect = true;
 
-            string path3D = null;
-            string name3D = null;
-            if(fileDialog3D.ShowDialog() == true)
-            {
-                path3D = fileDialog3D.FileName;
-                name3D = fileDialog3D.SafeFileName;
-            }
-
-            List<string> filePaths = new List<string>();
-            List<string> fileNames = new List<string>();
             if (fileDialogImage.ShowDialog() == true)
             {
-                filePaths.AddRange(fileDialogImage.FileNames);
-                fileNames.AddRange(fileDialogImage.SafeFileNames);
-            }
-
-            if(!string.IsNullOrEmpty(path3D) && !string.IsNullOrEmpty(name3D) && !filePaths.IsNullOrEmpty())
-            {
-                sCikti.EkleCiktiGorsellerIle(new Cikti { CiktiTarihi = DateTime.Now, DonulenDerece = 0, HastaTCKimlikNo = 18217841219, RaporId = 0, Gorseller = new List<Gorsel>() }, path3D, name3D, filePaths, fileNames);
-
+                FilePaths.AddRange(fileDialogImage.FileNames);
+                FileNames.AddRange(fileDialogImage.SafeFileNames);
             }
             
+        }
+
+        private void ButtonPath_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog fileDialog3D = new OpenFileDialog();
+
+            //fileDialog3D.Filter =
+
+            if (fileDialog3D.ShowDialog() == true)
+            {
+                Path3D = fileDialog3D.FileName;
+                Name3D = fileDialog3D.SafeFileName;
+            }
+
+        }
+
+        private void ButtonCalistir_Click(object sender, RoutedEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(Path3D) && !string.IsNullOrEmpty(Name3D) && !FilePaths.IsNullOrEmpty())
+            {
+                sCikti.EkleCiktiGorsellerIle(new Cikti { CiktiTarihi = DateTime.Now, DonulenDerece = 0, HastaTCKimlikNo = 18217841219, RaporId = 0, Gorseller = new List<Gorsel>() }, Path3D, Name3D, FilePaths, FileNames);
+
+            }
+        }
+
+        private void ButtonHastaAra_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                Hasta = sHasta.OkuHasta(new Hasta { TCKimlikNo = Convert.ToInt64(TextBoxTCKNo.Text) });
+
+                LabelTCKNo.Content = Hasta.AdSoyad;
+
+                ButtonHastaAra.IsEnabled = false;
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(caption: "Hasta Arama Hata", messageBoxText: ex.Message);
+            }
         }
     }
 }

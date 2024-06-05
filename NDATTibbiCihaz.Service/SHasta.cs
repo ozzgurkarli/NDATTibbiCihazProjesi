@@ -13,6 +13,26 @@ namespace NDATTibbiCihaz.Service
     {
         private readonly EHasta eHasta = new EHasta();
 
+        public Hasta OkuHasta(Hasta item)
+        {
+            Hasta? hasta = null;
+            long tckNo = 0;
+
+                if (item.TCKimlikNo>= 100000000000 && item.TCKimlikNo < 10000000000)
+                {
+                    throw new Exception(message: "TCK No hatalı girildi.");
+                }
+
+                hasta = eHasta.OkuHastaTCKNoIle(item);
+
+                if (hasta == null)
+                {
+                    throw new Exception(message: "Hasta bulunamadı.");
+                }
+
+            return hasta;
+        }
+
         public List<Hasta> AramaHasta(Hasta item)
         {
             List<Hasta> hastaList = new List<Hasta>();
