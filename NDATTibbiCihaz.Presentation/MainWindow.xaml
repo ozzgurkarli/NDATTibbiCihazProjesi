@@ -5,9 +5,34 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NDATTibbiCihaz.Presentation"
         mc:Ignorable="d"
-        Title="OPTOMO" Height="1080" Width="1920" WindowStartupLocation="CenterScreen" WindowState="Maximized">
-    <Grid>
-        <StackPanel/>
-        <Frame x:Name="Main" NavigationUIVisibility="Hidden" Loaded="Main_Loaded"/>
-    </Grid>
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Title="OPTOMO" Height="1080" Width="1920" WindowState="Maximized">
+
+
+    <Border CornerRadius="12">
+        <Border CornerRadius="10"                    
+            BorderThickness="2"
+            Opacity="0.95">
+            <Border.BorderBrush>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#462AD8" Offset="0"/>
+                    <GradientStop Color="#DA34AE" Offset="0.75"/>
+                    <GradientStop Color="#8A16C1" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.BorderBrush>
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
+                    <GradientStop Color="#060531" Offset="0"/>
+                    <GradientStop Color="#1B1448" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+            <Grid>
+                <StackPanel/>
+                <Frame x:Name="Main" NavigationUIVisibility="Hidden" Loaded="Main_Loaded"/>
+            </Grid>
+        </Border>
+
+    </Border>
 </Window>

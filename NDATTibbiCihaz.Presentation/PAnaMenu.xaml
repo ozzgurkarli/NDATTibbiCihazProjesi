@@ -8,12 +8,90 @@
       d:DesignHeight="1080" d:DesignWidth="1920"
       Title="PAnaMenu">
 
-    <Grid Background="Black" Loaded="Grid_Loaded">
-        <StackPanel HorizontalAlignment="Center" Width="1280" Height="966" VerticalAlignment="Center">
-            <Image Source="/Logo/logoyazili.jpg" Height="242" Width="532"/>
-        </StackPanel>
-        <Button x:Name="ButtonMakineyeBaglan" Content="MAKINEYE BAĞLAN" HorizontalAlignment="Left" Margin="600,500,0,0" VerticalAlignment="Top" Height="250" Width="250" FontSize="24" Click="ButtonMakineyeBaglan_Click"/>
-        <Button x:Name="ButtonSonucEkraninaBaglan" Content="SONUÇ EKRANI" HorizontalAlignment="Right" Margin="0,500,600,0" VerticalAlignment="Top" Height="250" Width="250" FontSize="24" Click="ButtonSonucEkraninaBaglan_Click"/>
-        <Label x:Name="TextBoxHosgeldiniz" HorizontalAlignment="Center" Margin="0,400,0,0" VerticalAlignment="Top" Foreground="White" FontSize="24"/>
-    </Grid>
+    <Border CornerRadius="12">
+        <Border CornerRadius="10"                    
+    BorderThickness="2"
+    Opacity="0.95">
+            <Border.BorderBrush>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#462AD8" Offset="0"/>
+                    <GradientStop Color="#DA34AE" Offset="0.75"/>
+                    <GradientStop Color="#8A16C1" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.BorderBrush>
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
+                    <GradientStop Color="#060531" Offset="0"/>
+                    <GradientStop Color="#1B1448" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+
+            <Grid Loaded="Grid_Loaded">
+                <StackPanel HorizontalAlignment="Left" Width="554" Height="1080" VerticalAlignment="Center">
+                    <Image Source="/Logo/logoyazili.jpg" Height="239" Width="532"/>
+                </StackPanel>
+                <Button      
+                    x:Name="ButtonMakineyeBaglan" Content="MAKİNEYE BAĞLAN" HorizontalAlignment="Left" Margin="600,500,0,0" VerticalAlignment="Top" Width="250" Click="ButtonMakineyeBaglan_Click" Height="250"
+                    BorderThickness="0"
+                    Foreground="White"
+                    FontSize="24"
+                    FontFamily="Montserrat"
+                    Cursor="Hand"             >
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="#462AD8"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#28AEED"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Width="250" Height="250"
+                        CornerRadius="20"
+                        Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+                                      HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <Button      
+                    x:Name="ButtonSonucEkraninaBaglan" Content="SONUÇ EKRANI" HorizontalAlignment="Right" Margin="0,500,600,0" VerticalAlignment="Top" Height="250" Width="250" FontSize="24" Click="ButtonSonucEkraninaBaglan_Click"
+                    BorderThickness="0"
+                    Foreground="White"
+                    FontFamily="Montserrat"
+                    Cursor="Hand"             >
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="#462AD8"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#28AEED"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Width="250" Height="250"
+        CornerRadius="20"
+        Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+                      HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <TextBlock x:Name="TextBoxHosgeldiniz" HorizontalAlignment="Center" Margin="0,400,0,0" VerticalAlignment="Top" Foreground="White" FontSize="24"
+            Background="{x:Null}" 
+               FontWeight="Medium"
+               FontFamily="Montserrat"/>
+            </Grid>
+        </Border>
+    </Border>
+
+   
 </Page>

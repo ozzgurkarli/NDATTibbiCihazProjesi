@@ -37,7 +37,7 @@ namespace NDATTibbiCihaz.Presentation
 
         private void Grid_Loaded(object sender, RoutedEventArgs e)
         {
-            TextBoxHosgeldiniz.Content = $"Hoşgeldiniz, {Havuz.Doktor.AdSoyad}.";
+            TextBoxHosgeldiniz.Text = $"Hoşgeldiniz, {Havuz.Doktor.AdSoyad}.";
         }
     }
 }
