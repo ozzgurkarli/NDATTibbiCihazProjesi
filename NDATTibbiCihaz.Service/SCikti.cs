@@ -23,7 +23,7 @@ namespace NDATTibbiCihaz.Service
         public Cikti EkleCiktiGorsellerIle(Cikti Cikti, string Path3D, string Name3D, List<string> FilePaths, List<string> FileNames)
         {
             Cikti.Path3D = $"/3DFiles/{DateTime.Now.ToFileTime()}_{Cikti.HastaTCKimlikNo}_{Name3D}";
-            File.Copy(Path3D, Cikti.Path3D);
+            //File.Copy(Path3D, Cikti.Path3D);
 
             Cikti item = eCikti.EkleCikti(Cikti);
 

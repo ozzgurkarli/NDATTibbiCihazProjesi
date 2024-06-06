@@ -15,6 +15,7 @@
   <ItemGroup>
     <PackageReference Include="HelixToolkit.Wpf" Version="2.25.0" />
     <PackageReference Include="MaterialDesignThemes" Version="5.0.0" />
+    <PackageReference Include="WPF.ImageEffects" Version="1.5.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -47,6 +48,9 @@
     <Page Update="PHastaBilgileri.xaml">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <Generator>XamlIntelliSenseFileGenerator</Generator>
+    </Page>
+    <Page Update="PRaporEkle.xaml">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Page>
   </ItemGroup>
 

@@ -28,6 +28,9 @@ namespace NDATTibbiCihaz.Presentation
         private readonly SCikti sCikti = new SCikti();
         private readonly SHasta sHasta = new SHasta();
 
+        bool flag = false;
+        bool calisiyor = false;
+
         public PMakineCiktiAl()
         {
             InitializeComponent();
@@ -62,25 +65,50 @@ namespace NDATTibbiCihaz.Presentation
 
         }
 
-        private void ButtonCalistir_Click(object sender, RoutedEventArgs e)
+        private async void ButtonCalistir_Click(object sender, RoutedEventArgs e)
         {
-            decimal taramaAcisi;
-            int projSayisi;
+            if (!calisiyor)
+            {
+                flag = false;
+                decimal taramaAcisi;
+                int projSayisi;
 
-            if (!string.IsNullOrEmpty(Path3D) && !string.IsNullOrEmpty(Name3D) && !FilePaths.IsNullOrEmpty() && !string.IsNullOrEmpty(Hasta.AdSoyad) && decimal.TryParse(TextBoxTaramaAcisi.Text, out taramaAcisi) && int.TryParse(TextBoxProj.Text, out projSayisi))
-            {   
-                if(projSayisi != FilePaths.Count)
+                if (!string.IsNullOrEmpty(Path3D) && !string.IsNullOrEmpty(Name3D) && !FilePaths.IsNullOrEmpty() && !string.IsNullOrEmpty(Hasta.AdSoyad) && decimal.TryParse(TextBoxTaramaAcisi.Text, out taramaAcisi) && int.TryParse(TextBoxProj.Text, out projSayisi))
                 {
-                    MessageBox.Show(caption: "Çalıştırma Hata", messageBoxText: "Projeksiyon sayısı seçilen görsel sayısına eşit olmalı.");
+                    if (projSayisi != FilePaths.Count)
+                    {
+                        MessageBox.Show(caption: "Çalıştırma Hata", messageBoxText: "Projeksiyon sayısı seçilen görsel sayısına eşit olmalı.");
+                    }
+                    else
+                    {
+                        calisiyor = true;
+                        ButtonCalistir.Content = "Durdur";
+                        for (int i = 1; i <= projSayisi; i++)
+                        {
+                            if (flag)
+                            {
+                                calisiyor = false;
+                                ButtonCalistir.Content = "Çalıştır";
+                                break;
+                            }
+                            lblCount.Content = $"{i}/{projSayisi}";
+                            await Task.Delay(1000);
+                        }
+
+                        calisiyor = false;
+                        ButtonCalistir.Visibility = Visibility.Hidden;
+                        lblCount.Content = "Tamamlandı";
+                        sCikti.EkleCiktiGorsellerIle(new Cikti { CiktiTarihi = DateTime.Now, DonulenDerece = taramaAcisi, HastaTCKimlikNo = Convert.ToInt64(TextBoxTCKNo.Text), RaporId = 0, Gorseller = new List<Gorsel>() }, Path3D, Name3D, FilePaths, FileNames);
+                    }
                 }
                 else
                 {
-                    sCikti.EkleCiktiGorsellerIle(new Cikti { CiktiTarihi = DateTime.Now, DonulenDerece = taramaAcisi, HastaTCKimlikNo = Convert.ToInt64(TextBoxTCKNo.Text), RaporId = 0, Gorseller = new List<Gorsel>() }, Path3D, Name3D, FilePaths, FileNames);
+                    MessageBox.Show(caption: "Çalıştırma Hata", messageBoxText: "Makineyi çalıştırmak için tüm alanlar doğru bir şekilde doldurulmalı.");
                 }
             }
             else
             {
-                MessageBox.Show(caption: "Çalıştırma Hata", messageBoxText: "Makineyi çalıştırmak için tüm alanlar doğru bir şekilde doldurulmalı.");
+                flag = true;
             }
         }
 

@@ -31,6 +31,8 @@ namespace NDATTibbiCihaz.Presentation
     {
         private readonly SRapor sRapor = new SRapor();
         private readonly SCikti sCikti = new SCikti();
+
+        double Value = 0;
         Cikti Cikti = new Cikti();
         Rapor Rapor = new Rapor();
         Gorsel Gorsel = new Gorsel();
@@ -89,7 +91,7 @@ namespace NDATTibbiCihaz.Presentation
             }
 
             RId.Content = Rapor.Id != 0 ? Rapor.Id : null;
-            RYorum.Content = !string.IsNullOrWhiteSpace(Rapor.Yorum) ? Rapor.Yorum : "Rapor Bulunamadı";
+            RYorum.Text = !string.IsNullOrWhiteSpace(Rapor.Yorum) ? Rapor.Yorum : "Rapor Bulunamadı";
         }
 
         private bool gorselButtonVisibility(bool flag)
@@ -170,6 +172,11 @@ namespace NDATTibbiCihaz.Presentation
 
                 btnSwap.Content = "3D Görüntüle";
             }
+        }
+
+        private void sliderParlaklik_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            brightness.Brightness = sliderParlaklik.Value;
         }
     }
 }
