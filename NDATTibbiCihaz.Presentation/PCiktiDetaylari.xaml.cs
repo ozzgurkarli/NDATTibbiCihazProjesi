@@ -1,4 +1,5 @@
-﻿using Microsoft.IdentityModel.Tokens;
+﻿using MaterialDesignThemes.Wpf;
+using Microsoft.IdentityModel.Tokens;
 using NDATTibbiCihaz.Common;
 using NDATTibbiCihaz.Entity;
 using NDATTibbiCihaz.Service;
@@ -29,6 +30,7 @@ namespace NDATTibbiCihaz.Presentation
 
     {
         private readonly SRapor sRapor = new SRapor();
+        private readonly SCikti sCikti = new SCikti();
         Cikti Cikti = new Cikti();
         Rapor Rapor = new Rapor();
         Gorsel Gorsel = new Gorsel();
@@ -65,19 +67,29 @@ namespace NDATTibbiCihaz.Presentation
             CAdSoyad1.Content = Havuz.Hasta.AdSoyad;
             CTarih1.Content = Cikti.CiktiTarihi;
             CDerece1.Content = Cikti.DonulenDerece;
-            RId.Content = Rapor.Id!=0?Rapor.Id:null;
-            RYorum.Content = !string.IsNullOrWhiteSpace(Rapor.Yorum)?Rapor.Yorum:"Rapor Bulunamadı";
+            raporGetir();
 
             if (gorselButtonVisibility(!Cikti.Gorseller.IsNullOrEmpty()))
             {
                 PImage.Source = new BitmapImage(new Uri(Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), @"..\..\.." + Cikti.Gorseller[index].PathGorsel))));
-                Sayac.Content = (index + 1) + "/" + (Cikti.Gorseller.Count);
+                Sayac.Content = (index + 1) + "/" + (Cikti.Gorseller.Count) + $"({Cikti.Gorseller[index].Aci}°)";
             }
             else
             {
                 MessageBox.Show(caption: "Görsel Hatası", messageBoxText: "Çıktıya ait görsel bulunamadı.");
             }
 
+        }
+
+        private void raporGetir()
+        {
+            if(Rapor.Id != 0)
+            {
+                ButtonRaporEkle.Visibility = Visibility.Hidden;
+            }
+
+            RId.Content = Rapor.Id != 0 ? Rapor.Id : null;
+            RYorum.Content = !string.IsNullOrWhiteSpace(Rapor.Yorum) ? Rapor.Yorum : "Rapor Bulunamadı";
         }
 
         private bool gorselButtonVisibility(bool flag)
@@ -110,7 +122,7 @@ namespace NDATTibbiCihaz.Presentation
             }
 
             PImage.Source = new BitmapImage(new Uri(Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), @"..\..\.." + Cikti.Gorseller[index].PathGorsel))));
-            Sayac.Content = (index + 1) + "/" + (Cikti.Gorseller.Count);
+            Sayac.Content = (index + 1) + "/" + (Cikti.Gorseller.Count) + $"({Math.Round(Cikti.Gorseller[index].Aci, 1)}°)";
         }
 
         
@@ -124,6 +136,20 @@ namespace NDATTibbiCihaz.Presentation
         {
             gorselDegis(false);
             
+        }
+
+        private void ButtonRaporEkle_Click(object sender, RoutedEventArgs e)
+        {
+            PRaporEkle pRaporEkle = new PRaporEkle(Cikti);
+            pRaporEkle.ShowDialog();
+
+            if (pRaporEkle.Success)
+            {
+                Rapor = sRapor.EkleRapor(pRaporEkle.Rapor, Cikti);
+                Cikti.RaporId = Rapor.Id;
+
+                raporGetir();
+            }
         }
     }
 }

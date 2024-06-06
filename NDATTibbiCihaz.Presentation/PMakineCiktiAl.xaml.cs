@@ -43,17 +43,7 @@ namespace NDATTibbiCihaz.Presentation
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            OpenFileDialog fileDialogImage = new OpenFileDialog();
-
-            fileDialogImage.Filter = "BMP|*.bmp|GIF|*.gif|JPG|*.jpg;*.jpeg|PNG|*.png|TIFF|*.tif;*.tiff|" + "All Graphics Types|*.bmp;*.jpg;*.jpeg;*.png;*.tif;*.tiff";
-            fileDialogImage.Multiselect = true;
-
-            if (fileDialogImage.ShowDialog() == true)
-            {
-                FilePaths.AddRange(fileDialogImage.FileNames);
-                FileNames.AddRange(fileDialogImage.SafeFileNames);
-            }
-            
+            MainWindow.SayfaGecis(new PAnaMenu());
         }
 
         private void ButtonPath_Click(object sender, RoutedEventArgs e)
@@ -66,16 +56,31 @@ namespace NDATTibbiCihaz.Presentation
             {
                 Path3D = fileDialog3D.FileName;
                 Name3D = fileDialog3D.SafeFileName;
+
+                ButtonPath.IsEnabled = false;
             }
 
         }
 
         private void ButtonCalistir_Click(object sender, RoutedEventArgs e)
         {
-            if (!string.IsNullOrEmpty(Path3D) && !string.IsNullOrEmpty(Name3D) && !FilePaths.IsNullOrEmpty())
-            {
-                sCikti.EkleCiktiGorsellerIle(new Cikti { CiktiTarihi = DateTime.Now, DonulenDerece = 0, HastaTCKimlikNo = 18217841219, RaporId = 0, Gorseller = new List<Gorsel>() }, Path3D, Name3D, FilePaths, FileNames);
+            decimal taramaAcisi;
+            int projSayisi;
 
+            if (!string.IsNullOrEmpty(Path3D) && !string.IsNullOrEmpty(Name3D) && !FilePaths.IsNullOrEmpty() && !string.IsNullOrEmpty(Hasta.AdSoyad) && decimal.TryParse(TextBoxTaramaAcisi.Text, out taramaAcisi) && int.TryParse(TextBoxProj.Text, out projSayisi))
+            {   
+                if(projSayisi != FilePaths.Count)
+                {
+                    MessageBox.Show(caption: "Çalıştırma Hata", messageBoxText: "Projeksiyon sayısı seçilen görsel sayısına eşit olmalı.");
+                }
+                else
+                {
+                    sCikti.EkleCiktiGorsellerIle(new Cikti { CiktiTarihi = DateTime.Now, DonulenDerece = taramaAcisi, HastaTCKimlikNo = Convert.ToInt64(TextBoxTCKNo.Text), RaporId = 0, Gorseller = new List<Gorsel>() }, Path3D, Name3D, FilePaths, FileNames);
+                }
+            }
+            else
+            {
+                MessageBox.Show(caption: "Çalıştırma Hata", messageBoxText: "Makineyi çalıştırmak için tüm alanlar doğru bir şekilde doldurulmalı.");
             }
         }
 
@@ -83,15 +88,42 @@ namespace NDATTibbiCihaz.Presentation
         {
             try
             {
-                Hasta = sHasta.OkuHasta(new Hasta { TCKimlikNo = Convert.ToInt64(TextBoxTCKNo.Text) });
+                long tckNo = 0;
 
-                LabelTCKNo.Content = Hasta.AdSoyad;
+                if (long.TryParse(TextBoxTCKNo.Text, out tckNo))
+                {
+                    Hasta = sHasta.OkuHasta(new Hasta { TCKimlikNo = tckNo });
 
-                ButtonHastaAra.IsEnabled = false;
+                    LabelTCKNo.Content = Hasta.AdSoyad;
+
+                    TextBoxTCKNo.IsEnabled = false;
+                    ButtonHastaAra.IsEnabled = false;
+                }
+                else
+                {
+                    MessageBox.Show(caption: "Hasta Arama Hata", messageBoxText: "Hatalı format, sadece rakam giriniz.");
+                }
+
             }
             catch(Exception ex)
             {
                 MessageBox.Show(caption: "Hasta Arama Hata", messageBoxText: ex.Message);
+            }
+        }
+
+        private void ButtonGorsellerPath_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog fileDialogImage = new OpenFileDialog();
+
+            fileDialogImage.Filter = "BMP|*.bmp|GIF|*.gif|JPG|*.jpg;*.jpeg|PNG|*.png|TIFF|*.tif;*.tiff|" + "All Graphics Types|*.bmp;*.jpg;*.jpeg;*.png;*.tif;*.tiff";
+            fileDialogImage.Multiselect = true;
+
+            if (fileDialogImage.ShowDialog() == true)
+            {
+                FilePaths.AddRange(fileDialogImage.FileNames);
+                FileNames.AddRange(fileDialogImage.SafeFileNames);
+
+                ButtonGorsellerPath.IsEnabled = false;
             }
         }
     }

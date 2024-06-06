@@ -26,11 +26,21 @@ namespace NDATTibbiCihaz.Entity
 
             return db.Ciktilar.Where(x => x.Path3D.Equals(Cikti.Path3D) && x.HastaTCKimlikNo.Equals(Cikti.HastaTCKimlikNo)).First();
         }
-        public Cikti GuncelleCikti(Cikti Cikti)
+        public Cikti GuncelleCiktiGorseller(Cikti Cikti)
         {
             Cikti item = db.Ciktilar.Where(x => x.Id.Equals(Cikti.Id)).First();
 
             item.Gorseller = Cikti.Gorseller;
+
+            db.SaveChanges();
+
+            return item;
+        }
+        public Cikti GuncelleCiktiRapor(Cikti Cikti)
+        {
+            Cikti item = db.Ciktilar.Where(x => x.Id.Equals(Cikti.Id)).First();
+
+            item.RaporId = Cikti.RaporId;
 
             db.SaveChanges();
 

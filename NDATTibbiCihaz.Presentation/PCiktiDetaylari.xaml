@@ -35,9 +35,10 @@
             <Label x:Name="RId" Content="Veriden ID" HorizontalAlignment="Left" Margin="309,349,0,0" VerticalAlignment="Top" Height="62" Width="194" FontSize="24"/>
             <Label x:Name="RYorum" Content="Veriden Yorum" HorizontalAlignment="Left" Margin="309,411,0,0" VerticalAlignment="Top" Height="62" Width="216" FontSize="24"/>
             <Image x:Name="PImage"  HorizontalAlignment="Left" Height="363" Margin="615,91,0,0" VerticalAlignment="Top" Width="385"/>
-            <Label x:Name="Sayac" Content="veriden GElen" HorizontalAlignment="Left" Margin="750,490,0,0" VerticalAlignment="Top" FontSize="24" RenderTransformOrigin="0.338,0.549" Width="114"/>
-            <Button x:Name="SagaGorsel" Content="--&gt;" HorizontalAlignment="Left" Margin="868,490,0,0" VerticalAlignment="Top" Height="40" Width="111" FontSize="24" Click="SagaGorsel_Click"/>
-            <Button x:Name="SolaGorsel" Content="&lt;--" HorizontalAlignment="Left" Margin="615,490,0,0" VerticalAlignment="Top" Height="42" Width="97" FontSize="24" Click="SolaGorsel_Click"/>
+            <Label x:Name="Sayac" Content="veriden GElen" HorizontalAlignment="Left" Margin="713,488,0,0" VerticalAlignment="Top" FontSize="24" RenderTransformOrigin="0.338,0.549" Width="165"/>
+            <Button x:Name="SagaGorsel" Content="--&gt;" HorizontalAlignment="Left" Margin="883,490,0,0" VerticalAlignment="Top" Height="40" Width="93" FontSize="24" Click="SagaGorsel_Click"/>
+            <Button x:Name="SolaGorsel" Content="&lt;--" HorizontalAlignment="Left" Margin="615,490,0,0" VerticalAlignment="Top" Height="42" Width="93" FontSize="24" Click="SolaGorsel_Click"/>
+            <Button x:Name="ButtonRaporEkle" Content="Rapor Ekle" HorizontalAlignment="Left" Margin="309,352,0,0" VerticalAlignment="Top" FontSize="24" Width="194" Click="ButtonRaporEkle_Click"/>
 
         </Grid>
 

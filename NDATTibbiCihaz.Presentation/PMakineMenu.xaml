@@ -33,7 +33,7 @@
         <TextBox x:Name="TextBoxTaramaAcisi" HorizontalAlignment="Left" Margin="716,345,0,0" TextWrapping="Wrap" Height="40" VerticalAlignment="Top" Width="250" FontSize="24" Visibility="Hidden"/>
         <Label x:Name="LabelTaramaAcisi" Content="Tarama Açısı:" HorizontalAlignment="Left" Margin="545,345,0,0" VerticalAlignment="Top" Foreground="White" FontSize="24" Visibility="Hidden"/>
         <TextBox x:Name="TextBoxProj" HorizontalAlignment="Left" Margin="1222,345,0,0" TextWrapping="Wrap" Height="40" VerticalAlignment="Top" Width="250" FontSize="24" Visibility="Hidden"/>
-        <Label x:Name="LabelProj" HorizontalAlignment="Left" Margin="1025,345,0,0" VerticalAlignment="Top" Foreground="White" FontSize="24" Content="Projeksiyon No:" Visibility="Hidden"/>
+        <Label x:Name="LabelProj" HorizontalAlignment="Left" Margin="1025,345,0,0" VerticalAlignment="Top" Foreground="White" FontSize="24" Content="Projeksiyon Sayısı:" Visibility="Hidden"/>
         <Label x:Name="LabelBagliMakine" HorizontalAlignment="Left" Margin="135,40,0,0" VerticalAlignment="Top" FontSize="24" Foreground="White"/>
         <Button HorizontalAlignment="Left" Margin="51,35,0,0" VerticalAlignment="Top" FontSize="24" Height="50" Width="50" Click="Button_Click">
             <StackPanel>

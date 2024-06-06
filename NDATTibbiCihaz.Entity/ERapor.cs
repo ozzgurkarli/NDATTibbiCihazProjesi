@@ -16,5 +16,14 @@ namespace NDATTibbiCihaz.Entity
         {
             return db.Raporlar.Where(x => x.Id == item.Id).FirstOrDefault();
         }
+
+        public Rapor EkleRapor(Rapor item)
+        {
+            Rapor rapor = db.Raporlar.Add(item).Entity;
+
+            db.SaveChanges();
+
+            return item;
+        }
     }
 }

@@ -35,12 +35,17 @@ namespace NDATTibbiCihaz.Service
                 string path = $"/Images/{time}_{Cikti.HastaTCKimlikNo}_{i}_{FileNames[i]}";
                 string pathFile = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), @$"..\..\..\Images\{time}_{Cikti.HastaTCKimlikNo}_{i}_{FileNames[i]}"));
                 File.Copy(FilePaths[i], pathFile);
-                gorselList.Add(new Gorsel { Aci = 0, CiktiId = Cikti.Id, PathGorsel = path });
+                gorselList.Add(new Gorsel { Aci = i * (Cikti.DonulenDerece / FilePaths.Count), CiktiId = Cikti.Id, PathGorsel = path });
             }
 
             item.Gorseller = gorselList;
 
-            return eCikti.GuncelleCikti(item);
+            return eCikti.GuncelleCiktiGorseller(item);
+        }
+
+        public Cikti EkleRaporIdCikti(Cikti cikti)
+        {
+            return eCikti.GuncelleCiktiRapor(cikti);
         }
     }
 }

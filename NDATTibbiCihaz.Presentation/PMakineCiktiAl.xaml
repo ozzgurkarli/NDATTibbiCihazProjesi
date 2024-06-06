@@ -14,18 +14,18 @@
                 <materialDesign:PackIcon Kind="Home" Width="50" Height="50" HorizontalAlignment="Center"/>
             </StackPanel>
         </Button>
-        <TextBox x:Name="TextBoxAdim" HorizontalAlignment="Left" Margin="1155,421,0,0" TextWrapping="Wrap" Height="40" VerticalAlignment="Top" Width="357" FontSize="24" Visibility="Visible"/>
-        <Label x:Name="LabelAdim" Content="Adım (mm):" HorizontalAlignment="Left" Margin="929,421,0,0" VerticalAlignment="Top" Foreground="White" FontSize="24" Visibility="Visible" Width="190"/>
-        <TextBox x:Name="TextBoxTaramaAcisi" HorizontalAlignment="Left" Margin="1155,345,0,0" TextWrapping="Wrap" Height="40" VerticalAlignment="Top" Width="357" FontSize="24" Visibility="Visible"/>
-        <Label x:Name="LabelTaramaAcisi" Content="Tarama Açısı:" HorizontalAlignment="Left" Margin="911,345,0,0" VerticalAlignment="Top" Foreground="White" FontSize="24" Visibility="Visible" Width="208"/>
+        <TextBox x:Name="TextBoxProj" HorizontalAlignment="Left" Margin="1205,421,0,0" TextWrapping="Wrap" Height="40" VerticalAlignment="Top" Width="358" FontSize="24" Visibility="Visible"/>
+        <Label x:Name="LabelAdim" Content="Projeksiyon Sayısı:" HorizontalAlignment="Left" Margin="939,417,0,0" VerticalAlignment="Top" Foreground="White" FontSize="24" Visibility="Visible" Width="201"/>
+        <TextBox x:Name="TextBoxTaramaAcisi" HorizontalAlignment="Left" Margin="1205,345,0,0" TextWrapping="Wrap" Height="40" VerticalAlignment="Top" Width="358" FontSize="24" Visibility="Visible"/>
+        <Label x:Name="LabelTaramaAcisi" Content="Tarama Açısı:" HorizontalAlignment="Left" Margin="991,343,0,0" VerticalAlignment="Top" Foreground="White" FontSize="24" Visibility="Visible" Width="209"/>
 
-        <Button x:Name="ButtonPath" Content="Dosyayı seç" HorizontalAlignment="Left" Margin="1155,0,0,0" VerticalAlignment="Center" Height="60" Width="357" FontSize="24" Click="ButtonPath_Click"/>
-        <Button Content="Dosyaları seç" HorizontalAlignment="Left" Margin="1155,607,0,0" VerticalAlignment="Top" Height="60" Width="357" FontSize="24" Click="Button_Click"/>
-        <Button x:Name="ButtonCalistir" Content="Çalıştır" HorizontalAlignment="Center" Margin="0,907,0,0" VerticalAlignment="Top" Height="60" Width="362" FontSize="24" Click="ButtonCalistir_Click"/>
-        <TextBox x:Name="TextBoxTCKNo" HorizontalAlignment="Left" Margin="414,345,0,0" TextWrapping="Wrap" Height="40" VerticalAlignment="Top" Width="357" FontSize="24" Visibility="Visible"/>
-        <Label Content="Hasta TCK No:" HorizontalAlignment="Left" Margin="213,345,0,0" VerticalAlignment="Top" Foreground="White" FontSize="24"/>
-        <Button x:Name="ButtonHastaAra" Content="Hasta Ara" HorizontalAlignment="Left" Margin="412,470,0,0" VerticalAlignment="Top" Height="60" Width="362" FontSize="24" Click="ButtonHastaAra_Click"/>
-        <Label x:Name="LabelTCKNo" Content="" HorizontalAlignment="Left" Margin="512,410,0,0" VerticalAlignment="Top" Foreground="White" FontSize="24"/>
+        <Button x:Name="ButtonPath" Content="3D Dosyayı seç" HorizontalAlignment="Left" Margin="779,0,0,0" VerticalAlignment="Center" Height="60" Width="357" FontSize="24" Click="ButtonPath_Click"/>
+        <Button x:Name="ButtonGorsellerPath" Content="Görsel Dosyalarını seç" HorizontalAlignment="Left" Margin="1206,0,0,0" VerticalAlignment="Center" Height="60" Width="357" FontSize="24" Click="ButtonGorsellerPath_Click"/>
+        <Button x:Name="ButtonCalistir" Content="Çalıştır" HorizontalAlignment="Center" Margin="0,650,0,0" VerticalAlignment="Top" Height="60" Width="362" FontSize="24" Click="ButtonCalistir_Click"/>
+        <TextBox x:Name="TextBoxTCKNo" HorizontalAlignment="Left" Margin="355,345,0,0" TextWrapping="Wrap" Height="40" VerticalAlignment="Top" Width="357" FontSize="24" Visibility="Visible"/>
+        <Label Content="Hasta TCK No:" HorizontalAlignment="Left" Margin="164,345,0,0" VerticalAlignment="Top" Foreground="White" FontSize="24"/>
+        <Button x:Name="ButtonHastaAra" Content="Hasta Ara" HorizontalAlignment="Left" Margin="350,0,0,0" VerticalAlignment="Center" Height="60" Width="362" FontSize="24" Click="ButtonHastaAra_Click"/>
+        <Label x:Name="LabelTCKNo" Content="" HorizontalAlignment="Left" Margin="521,421,0,0" VerticalAlignment="Top" Foreground="White" FontSize="24"/>
 
     </Grid>
 </Page>

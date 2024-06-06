@@ -1,0 +1,20 @@
+﻿<Window x:Class="NDATTibbiCihaz.Presentation.PRaporEkle"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NDATTibbiCihaz.Presentation"
+        mc:Ignorable="d"
+        Title="PRaporEkle" Height="320" Width="500">
+    <Grid Background="BurlyWood">
+        <RichTextBox x:Name="txtBoxYorum" Margin="10,40,10,70" FontSize="24">
+            <FlowDocument>
+                <Paragraph>
+                    <Run Text=""/>
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+        <Button x:Name="btnRaporOlustur" Content="Rapor Oluştur" HorizontalAlignment="Left" Margin="312,250,0,0" VerticalAlignment="Top" FontSize="24" Width="178" Click="btnRaporOlustur_Click"/>
+
+    </Grid>
+</Window>
