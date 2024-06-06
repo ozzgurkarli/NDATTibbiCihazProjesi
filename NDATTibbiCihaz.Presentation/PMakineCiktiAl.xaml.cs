@@ -95,10 +95,13 @@ namespace NDATTibbiCihaz.Presentation
                             await Task.Delay(500);
                         }
 
-                        calisiyor = false;
-                        ButtonCalistir.Visibility = Visibility.Hidden;
-                        lblCount.Content = "Tamamlandı";
-                        sCikti.EkleCiktiGorsellerIle(new Cikti { CiktiTarihi = DateTime.Now, DonulenDerece = taramaAcisi, HastaTCKimlikNo = Convert.ToInt64(TextBoxTCKNo.Text), RaporId = 0, Gorseller = new List<Gorsel>() }, Path3D, Name3D, FilePaths, FileNames);
+                        if (calisiyor)
+                        {
+                            calisiyor = false;
+                            ButtonCalistir.Visibility = Visibility.Hidden;
+                            lblCount.Content = "Tamamlandı";
+                            sCikti.EkleCiktiGorsellerIle(new Cikti { CiktiTarihi = DateTime.Now, DonulenDerece = taramaAcisi, HastaTCKimlikNo = Convert.ToInt64(TextBoxTCKNo.Text), RaporId = 0, Gorseller = new List<Gorsel>() }, Path3D, Name3D, FilePaths, FileNames);
+                        }
                     }
                 }
                 else
