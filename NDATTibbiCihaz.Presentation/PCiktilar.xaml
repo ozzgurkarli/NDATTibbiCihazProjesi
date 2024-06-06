@@ -9,7 +9,7 @@
       Title="PCiktilar">
 
     <Grid Loaded="Grid_Loaded">
-        <ListView Background="DimGray" 
+        <ListView Background="#1B1448" 
           x:Name="ListViewCiktilar" Height="980
                   " Width="470"
           HorizontalAlignment="Left"
@@ -23,7 +23,7 @@
                             <ControlTemplate TargetType="ListViewItem">
                                 <StackPanel>
                                     <Border x:Name="border" 
-                                    Background="LightGray" 
+                                    Background="#462AD8" 
                                     BorderBrush="Black" 
                                     BorderThickness="0,0,5,5" 
                                     Margin="30,20,30,20"
@@ -50,7 +50,7 @@
             </ListView.ItemContainerStyle>
 
         </ListView>
-        <Grid Background="AntiqueWhite" Height="980" Width="1050" HorizontalAlignment="Right">
+        <Grid Background="#1B1448" Height="980" Width="1050" HorizontalAlignment="Right">
             <Frame x:Name="CiktiFrame" NavigationUIVisibility="Hidden"/>
         </Grid>
 

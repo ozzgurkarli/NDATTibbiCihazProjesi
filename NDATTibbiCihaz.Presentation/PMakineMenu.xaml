@@ -8,40 +8,185 @@
       mc:Ignorable="d" 
       d:DesignHeight="1080" d:DesignWidth="1920"
       Title="PMakineMenu">
+    <Border CornerRadius="12">
+        <Border CornerRadius="10"                    
+    BorderThickness="2"
+    Opacity="0.95">
+            <Border.BorderBrush>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#462AD8" Offset="0"/>
+                    <GradientStop Color="#DA34AE" Offset="0.75"/>
+                    <GradientStop Color="#8A16C1" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.BorderBrush>
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
+                    <GradientStop Color="#060531" Offset="0"/>
+                    <GradientStop Color="#1B1448" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+            <Grid Loaded="Grid_Loaded">
+                <ComboBox x:Name="ComboBoxMakine" HorizontalAlignment="Left" Margin="716,155,0,0" VerticalAlignment="Top" Width="400" Height="40" FontSize="24"/>
+                <Label FontWeight="Medium" FontFamily="Montserrat" x:Name="LabelKullanilabilirMakinelerText" Content="Kullanılabilir Makineler:" HorizontalAlignment="Left" Margin="436,153,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.75,1.676" Foreground="White" FontSize="24"/>
+                <Button Foreground="White" x:Name="ButtonBaglan" Content="Bağlan" HorizontalAlignment="Left" Margin="1221,153,0,0" VerticalAlignment="Top" Height="40" Width="301" FontSize="24" Click="ButtonBaglan_Click">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#462AD8"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#28AEED"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Height="40" Width="301"
+                        CornerRadius="20"
+                        Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                                      HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+                </Button>
+                <Label FontWeight="Medium" FontFamily="Montserrat" x:Name="LabelKapakDurumuText" Content="Kapak Durumu:" HorizontalAlignment="Left" Margin="518,233,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.75,1.676" Foreground="White" FontSize="24" Visibility="Hidden"/>
+                <Label FontWeight="Medium" FontFamily="Montserrat" x:Name="LabelKapakDurumu" HorizontalAlignment="Left" Margin="866,233,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.75,1.676" Foreground="White" FontSize="24" Content="Bekliyor" Visibility="Hidden"/>
+                <materialDesign:PackIcon x:Name="IconKapakDurumu" Width="50" Height="50" HorizontalAlignment="Left" Margin="1033,233,0,0" Visibility="Hidden"/>
+                <Label FontWeight="Medium" FontFamily="Montserrat" x:Name="LabelXRayDurumuText" Content="XRay Durumu:" HorizontalAlignment="Left" Margin="518,706,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.75,1.676" Foreground="White" FontSize="24" Visibility="Hidden"/>
+                <Label FontWeight="Medium" FontFamily="Montserrat" x:Name="LabelXRayDurumu" HorizontalAlignment="Left" Margin="866,706,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.75,1.676" Foreground="White" FontSize="24" Content="Bekliyor" Visibility="Hidden"/>
+                <materialDesign:PackIcon x:Name="IconXRayDurumu" Width="50" Height="50" HorizontalAlignment="Left" Margin="1033,706,0,0" Visibility="Hidden"/>
+                <Button Foreground="White" x:Name="ButtonKapakTesti" Content="Kapak Testi" HorizontalAlignment="Left" Margin="1221,233,0,0" VerticalAlignment="Top" Height="40" Width="301" FontSize="24" Visibility="Hidden" Click="ButtonKapakTesti_Click">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#462AD8"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#28AEED"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Height="40" Width="301"
+                        CornerRadius="20"
+                        Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                                      HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+                </Button>
+                <Button Foreground="White" x:Name="ButtonBaglantiyiKes" Content="Bağlantıyı Kes" HorizontalAlignment="Left" Margin="1221,153,0,0" VerticalAlignment="Top" Height="40" Width="301" FontSize="24" Visibility="Hidden" Click="ButtonBaglantiyiKes_Click">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#462AD8"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#28AEED"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Height="40" Width="301"
+                        CornerRadius="20"
+                        Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                                      HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+                </Button>
+                <Label FontWeight="Medium" FontFamily="Montserrat" x:Name="LabelPlatformDonusDurumuText" Content="Platform Durumu:" HorizontalAlignment="Left" Margin="518,509,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.75,1.676" Foreground="White" FontSize="24" Visibility="Hidden"/>
+                <Label FontWeight="Medium" FontFamily="Montserrat" x:Name="LabelPlatformDonusDurumu" HorizontalAlignment="Left" Margin="866,509,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.75,1.676" Foreground="White" FontSize="24" Content="Bekliyor" Visibility="Hidden"/>
+                <materialDesign:PackIcon x:Name="IconPlatformDurumu" Width="50" Height="50" HorizontalAlignment="Left" Margin="1033,509,0,0" Visibility="Hidden"/>
+                <Label FontWeight="Medium" FontFamily="Montserrat" x:Name="LabelTaramaDurumuText" Content="Tarama Durumu:" HorizontalAlignment="Left" Margin="518,603,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.75,1.676" Foreground="White" FontSize="24" Visibility="Hidden"/>
+                <Label FontWeight="Medium" FontFamily="Montserrat" x:Name="LabelTaramaDurumu" HorizontalAlignment="Left" Margin="866,603,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.75,1.676" Foreground="White" FontSize="24" Content="Bekliyor" Visibility="Hidden"/>
+                <materialDesign:PackIcon x:Name="IconTaramaDurumu" Width="50" Height="50" HorizontalAlignment="Left" Margin="1033,603,0,0" Visibility="Hidden"/>
+                <Button Foreground="White" x:Name="ButtonTumTestler" Content="Tümünü Test Et" HorizontalAlignment="Left" Margin="1222,421,0,0" VerticalAlignment="Top" Height="40" Width="300" FontSize="24" Click="ButtonTumTestler_Click" Visibility="Hidden" RenderTransformOrigin="0.507,2.075">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="#462AD8"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#28AEED"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Height="40" Width="301"
+                        CornerRadius="20"
+                        Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+                                      HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <TextBox x:Name="TextBoxAdim" HorizontalAlignment="Left" Margin="716,421,0,0" TextWrapping="Wrap" Height="40" VerticalAlignment="Top" Width="250" FontSize="24" Visibility="Hidden" FontWeight="Medium" FontFamily="Montserrat"     
+            Background="Transparent"
+             Foreground="White"
+             CaretBrush="LightGray"
+             BorderBrush="DarkGray"
+             BorderThickness="0,0,0,2"
+             VerticalContentAlignment="Center"
+             Padding="20,0,0,0"></TextBox>
+                <Label FontWeight="Medium" FontFamily="Montserrat" x:Name="LabelAdim" Content="Adım (mm):" HorizontalAlignment="Left" Margin="557,421,0,0" VerticalAlignment="Top" Foreground="White" FontSize="24" Visibility="Hidden"/>
+                <TextBox x:Name="TextBoxTaramaAcisi" HorizontalAlignment="Left" Margin="716,345,0,0" TextWrapping="Wrap" Height="40" VerticalAlignment="Top" Width="250" FontSize="24" Visibility="Hidden" FontWeight="Medium" FontFamily="Montserrat"     
+            Background="Transparent"
+             Foreground="White"
+             CaretBrush="LightGray"
+             BorderBrush="DarkGray"
+             BorderThickness="0,0,0,2"
+             VerticalContentAlignment="Center"
+             Padding="20,0,0,0"></TextBox>
+                <Label FontWeight="Medium" FontFamily="Montserrat" x:Name="LabelTaramaAcisi" Content="Tarama Açısı:" HorizontalAlignment="Left" Margin="545,345,0,0" VerticalAlignment="Top" Foreground="White" FontSize="24" Visibility="Hidden"/>
+                <TextBox x:Name="TextBoxProj" HorizontalAlignment="Left" Margin="1272,345,0,0" TextWrapping="Wrap" Height="40" VerticalAlignment="Top" Width="250" FontSize="24" Visibility="Hidden" FontWeight="Medium" FontFamily="Montserrat"     
+            Background="Transparent"
+             Foreground="White"
+             CaretBrush="LightGray"
+             BorderBrush="DarkGray"
+             BorderThickness="0,0,0,2"
+             VerticalContentAlignment="Center"
+             Padding="20,0,0,0"></TextBox>
+                <Label FontWeight="Medium" FontFamily="Montserrat" x:Name="LabelProj" HorizontalAlignment="Left" Margin="1025,345,0,0" VerticalAlignment="Top" Foreground="White" FontSize="24" Content="Projeksiyon Sayısı:" Visibility="Hidden"/>
+                <Label FontWeight="Medium" FontFamily="Montserrat" x:Name="LabelBagliMakine" HorizontalAlignment="Left" Margin="135,40,0,0" VerticalAlignment="Top" FontSize="24" Foreground="White"/>
+                <Button Foreground="White" HorizontalAlignment="Left" Margin="51,35,0,0" VerticalAlignment="Top" FontSize="24" Height="50" Width="50" Click="Button_Click">
+                    <StackPanel>
+                        <materialDesign:PackIcon Kind="Home" Width="50" Height="50" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </Button>
+                <Button Foreground="White" x:Name="ButtonCalistir" Content="Çalıştır" HorizontalAlignment="Left" Margin="1221,853,0,0" VerticalAlignment="Top" Height="40" Width="301" FontSize="24" Click="ButtonCalistir_Click" Visibility="Hidden">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="#462AD8"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#28AEED"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Height="40" Width="301"
+                        CornerRadius="20"
+                        Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+                                      HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
 
-    <Grid Background="#FF888888" Loaded="Grid_Loaded">
-        <ComboBox x:Name="ComboBoxMakine" HorizontalAlignment="Left" Margin="716,155,0,0" VerticalAlignment="Top" Width="400" Height="40" FontSize="24"/>
-        <Label x:Name="LabelKullanilabilirMakinelerText" Content="Kullanılabilir Makineler:" HorizontalAlignment="Left" Margin="436,153,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.75,1.676" Foreground="White" FontSize="24"/>
-        <Button x:Name="ButtonBaglan" Content="Bağlan" HorizontalAlignment="Left" Margin="1221,153,0,0" VerticalAlignment="Top" Height="40" Width="301" FontSize="24" Click="ButtonBaglan_Click"/>
-        <Label x:Name="LabelKapakDurumuText" Content="Kapak Durumu:" HorizontalAlignment="Left" Margin="518,233,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.75,1.676" Foreground="White" FontSize="24" Visibility="Hidden"/>
-        <Label x:Name="LabelKapakDurumu" HorizontalAlignment="Left" Margin="866,233,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.75,1.676" Foreground="White" FontSize="24" Content="Bekliyor" Visibility="Hidden"/>
-        <materialDesign:PackIcon x:Name="IconKapakDurumu" Width="50" Height="50" HorizontalAlignment="Left" Margin="1033,233,0,0" Visibility="Hidden"/>
-        <Label x:Name="LabelXRayDurumuText" Content="XRay Durumu:" HorizontalAlignment="Left" Margin="518,706,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.75,1.676" Foreground="White" FontSize="24" Visibility="Hidden"/>
-        <Label x:Name="LabelXRayDurumu" HorizontalAlignment="Left" Margin="866,706,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.75,1.676" Foreground="White" FontSize="24" Content="Bekliyor" Visibility="Hidden"/>
-        <materialDesign:PackIcon x:Name="IconXRayDurumu" Width="50" Height="50" HorizontalAlignment="Left" Margin="1033,706,0,0" Visibility="Hidden"/>
-        <Button x:Name="ButtonKapakTesti" Content="Kapak Testi" HorizontalAlignment="Left" Margin="1221,233,0,0" VerticalAlignment="Top" Height="40" Width="301" FontSize="24" Visibility="Hidden" Click="ButtonKapakTesti_Click"/>
-        <Button x:Name="ButtonBaglantiyiKes" Content="Bağlantıyı Kes" HorizontalAlignment="Left" Margin="1221,153,0,0" VerticalAlignment="Top" Height="40" Width="301" FontSize="24" Visibility="Hidden" Click="ButtonBaglantiyiKes_Click"/>
-        <Label x:Name="LabelPlatformDonusDurumuText" Content="Platform Durumu:" HorizontalAlignment="Left" Margin="518,509,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.75,1.676" Foreground="White" FontSize="24" Visibility="Hidden"/>
-        <Label x:Name="LabelPlatformDonusDurumu" HorizontalAlignment="Left" Margin="866,509,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.75,1.676" Foreground="White" FontSize="24" Content="Bekliyor" Visibility="Hidden"/>
-        <materialDesign:PackIcon x:Name="IconPlatformDurumu" Width="50" Height="50" HorizontalAlignment="Left" Margin="1033,509,0,0" Visibility="Hidden"/>
-        <Label x:Name="LabelTaramaDurumuText" Content="Tarama Durumu:" HorizontalAlignment="Left" Margin="518,603,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.75,1.676" Foreground="White" FontSize="24" Visibility="Hidden"/>
-        <Label x:Name="LabelTaramaDurumu" HorizontalAlignment="Left" Margin="866,603,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.75,1.676" Foreground="White" FontSize="24" Content="Bekliyor" Visibility="Hidden"/>
-        <materialDesign:PackIcon x:Name="IconTaramaDurumu" Width="50" Height="50" HorizontalAlignment="Left" Margin="1033,603,0,0" Visibility="Hidden"/>
-        <Button x:Name="ButtonTumTestler" Content="Tümünü Test Et" HorizontalAlignment="Left" Margin="1222,421,0,0" VerticalAlignment="Top" Height="40" Width="300" FontSize="24" Click="ButtonTumTestler_Click" Visibility="Hidden" RenderTransformOrigin="0.507,2.075"/>
-        <TextBox x:Name="TextBoxAdim" HorizontalAlignment="Left" Margin="716,421,0,0" TextWrapping="Wrap" Height="40" VerticalAlignment="Top" Width="250" FontSize="24" Visibility="Hidden"/>
-        <Label x:Name="LabelAdim" Content="Adım (mm):" HorizontalAlignment="Left" Margin="557,421,0,0" VerticalAlignment="Top" Foreground="White" FontSize="24" Visibility="Hidden"/>
-        <TextBox x:Name="TextBoxTaramaAcisi" HorizontalAlignment="Left" Margin="716,345,0,0" TextWrapping="Wrap" Height="40" VerticalAlignment="Top" Width="250" FontSize="24" Visibility="Hidden"/>
-        <Label x:Name="LabelTaramaAcisi" Content="Tarama Açısı:" HorizontalAlignment="Left" Margin="545,345,0,0" VerticalAlignment="Top" Foreground="White" FontSize="24" Visibility="Hidden"/>
-        <TextBox x:Name="TextBoxProj" HorizontalAlignment="Left" Margin="1222,345,0,0" TextWrapping="Wrap" Height="40" VerticalAlignment="Top" Width="250" FontSize="24" Visibility="Hidden"/>
-        <Label x:Name="LabelProj" HorizontalAlignment="Left" Margin="1025,345,0,0" VerticalAlignment="Top" Foreground="White" FontSize="24" Content="Projeksiyon Sayısı:" Visibility="Hidden"/>
-        <Label x:Name="LabelBagliMakine" HorizontalAlignment="Left" Margin="135,40,0,0" VerticalAlignment="Top" FontSize="24" Foreground="White"/>
-        <Button HorizontalAlignment="Left" Margin="51,35,0,0" VerticalAlignment="Top" FontSize="24" Height="50" Width="50" Click="Button_Click">
-            <StackPanel>
-                <materialDesign:PackIcon Kind="Home" Width="50" Height="50" HorizontalAlignment="Center"/>
-            </StackPanel>
-        </Button>
-        <Button x:Name="ButtonCalistir" Content="Çalıştır" HorizontalAlignment="Left" Margin="1221,853,0,0" VerticalAlignment="Top" Height="40" Width="301" FontSize="24" Click="ButtonCalistir_Click" Visibility="Hidden"/>
 
-
-    </Grid>
+            </Grid>
+        </Border>
+    </Border>
+  
 </Page>

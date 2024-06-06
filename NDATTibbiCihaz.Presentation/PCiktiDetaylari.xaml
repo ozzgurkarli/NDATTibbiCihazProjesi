@@ -8,36 +8,138 @@
       mc:Ignorable="d" 
       d:DesignHeight="980" d:DesignWidth="1050"
       Title="PCiktiDetaylari">
+    <Border CornerRadius="12">
+        <Border CornerRadius="10"                    
+    BorderThickness="2"
+    Opacity="0.95">
+            <Border.BorderBrush>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#462AD8" Offset="0"/>
+                    <GradientStop Color="#DA34AE" Offset="0.75"/>
+                    <GradientStop Color="#8A16C1" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.BorderBrush>
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
+                    <GradientStop Color="#060531" Offset="0"/>
+                    <GradientStop Color="#1B1448" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+            <Grid Loaded="Grid_Loaded" Margin="0,0,-0,-0">
+                <Label FontWeight="Medium" FontFamily="Montserrat" Foreground="White" Content="Çıktı Detayları" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Height="62" Width="180" FontSize="24"/>
+                <Label FontWeight="Medium" FontFamily="Montserrat" Foreground="White" Content="Hastanın TCKNo:" HorizontalAlignment="Left" Margin="54,91,0,0" VerticalAlignment="Top" Height="62" Width="194" FontSize="24"/>
+                <Label FontWeight="Medium" FontFamily="Montserrat" Foreground="White" Content="Hastanın Adı Soyadı:" HorizontalAlignment="Left" Margin="54,153,0,0" VerticalAlignment="Top" Height="62" Width="234" FontSize="24"/>
+                <Label FontWeight="Medium" FontFamily="Montserrat" Foreground="White" Content="Çıktı Tarihi:" HorizontalAlignment="Left" Margin="54,220,0,0" VerticalAlignment="Top" Height="62" Width="180" FontSize="24"/>
+                <Label FontWeight="Medium" FontFamily="Montserrat" Foreground="White" Content="Dönülen Derece:" HorizontalAlignment="Left" Margin="54,287,0,0" VerticalAlignment="Top" Height="62" Width="194" FontSize="24"/>
+                <Label FontWeight="Medium" FontFamily="Montserrat" Foreground="White" x:Name="CTckno1" Content="Veriden Gelen TC" HorizontalAlignment="Left" Margin="309,91,0,0" VerticalAlignment="Top" Height="62" Width="180" FontSize="24"/>
+                <Label FontWeight="Medium" FontFamily="Montserrat" Foreground="White" x:Name="CAdSoyad1" Content="Veriden adsoyad" HorizontalAlignment="Left" Margin="309,153,0,0" VerticalAlignment="Top" Height="62" Width="180" FontSize="24"/>
+                <Label FontWeight="Medium" FontFamily="Montserrat" Foreground="White" x:Name="CTarih1" Content="veriden tarih" HorizontalAlignment="Left" Margin="309,220,0,0" VerticalAlignment="Top" Height="62" Width="180" FontSize="24"/>
+                <Label FontWeight="Medium" FontFamily="Montserrat" Foreground="White" x:Name="CDerece1" Content="veriden Derece" HorizontalAlignment="Left" Margin="309,287,0,0" VerticalAlignment="Top" Height="62" Width="180" FontSize="24"/>
+                <Label FontWeight="Medium" FontFamily="Montserrat" Foreground="White" Content="Rapor Numarası:" HorizontalAlignment="Left" Margin="54,349,0,0" VerticalAlignment="Top" Height="62" Width="194" FontSize="24"/>
+                <Label FontWeight="Medium" FontFamily="Montserrat" Foreground="White" Content="Rapor Yorumu:" HorizontalAlignment="Left" Margin="54,411,0,0" VerticalAlignment="Top" Height="62" Width="194" FontSize="24"/>
+                <Label FontWeight="Medium" FontFamily="Montserrat" Foreground="White" x:Name="RId" Content="Veriden ID" HorizontalAlignment="Left" Margin="309,349,0,0" VerticalAlignment="Top" Height="62" Width="194" FontSize="24"/>
+                <Image x:Name="PImage"  HorizontalAlignment="Left" Height="505" Margin="615,91,0,0" VerticalAlignment="Top" Width="385">
+                    <Image.Effect>
+                        <imageeffects:BrightnessContrastEffect x:Name="brightness" />
+                    </Image.Effect>
+                </Image>
+                <h:HelixViewport3D Height="505" Margin="614,83,51,0" VerticalAlignment="Top" Width="385" Name="model3D" Visibility="Hidden" >
+                    <h:DefaultLights/>
+                    <h:Teapot x:Name="tea"/>
+                </h:HelixViewport3D>
+                <Label FontWeight="Medium" FontFamily="Montserrat" Foreground="White" x:Name="Sayac" Content="veriden GElen" HorizontalAlignment="Left" Margin="718,622,0,0" VerticalAlignment="Top" FontSize="24" RenderTransformOrigin="0.338,0.549" Width="165"/>
+                <Button Foreground="White" x:Name="SagaGorsel" Content="--&gt;" HorizontalAlignment="Left" Margin="883,624,0,0" VerticalAlignment="Top" Height="40" Width="93" FontSize="24" Click="SagaGorsel_Click">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="#462AD8"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#28AEED"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Height="42" Width="93"
+                        CornerRadius="20"
+                        Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+                                      HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <Button Foreground="White" x:Name="SolaGorsel" Content="&lt;--" HorizontalAlignment="Left" Margin="615,624,0,0" VerticalAlignment="Top" Height="42" Width="93" FontSize="24" Click="SolaGorsel_Click">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="#462AD8"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#28AEED"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Height="42" Width="93"
+                        CornerRadius="20"
+                        Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+                                      HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <Button Foreground="White" x:Name="ButtonRaporEkle" Content="Rapor Ekle" HorizontalAlignment="Left" Margin="297,349,0,0" VerticalAlignment="Top" FontSize="24" Width="226" Click="ButtonRaporEkle_Click">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="#462AD8"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#28AEED"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Width="226" Height="50"
+                        CornerRadius="20"
+                        Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+                                      HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <Button Foreground="White" x:Name="btnSwap" Content="3D Görüntüle" HorizontalAlignment="Left" Margin="680,715,0,0" VerticalAlignment="Top" FontSize="24" Width="226" Click="btnSwap_Click">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="#462AD8"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#28AEED"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Width="226" Height="50"
+                        CornerRadius="20"
+                        Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+                                      HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <Slider x:Name="sliderParlaklik" HorizontalAlignment="Right" Margin="0,91,0,0" VerticalAlignment="Top" Width="46" Orientation="Vertical" Height="453" Minimum="-1" Value="0" Maximum="1" ValueChanged="sliderParlaklik_ValueChanged"/>
+                <TextBlock x:Name="RYorum" HorizontalAlignment="Left" Margin="54,490,0,0" VerticalAlignment="Top" FontSize="24" Text="" Height="261" Width="463" FontWeight="Medium" FontFamily="Montserrat" Foreground="White" />
 
-    <Grid Background="AntiqueWhite" Loaded="Grid_Loaded" Margin="0,0,-0,-0">
-        <Label Content="Çıktı Detayları" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Height="62" Width="180" FontSize="24"/>
-        <Label Content="Hastanın TCKNo:" HorizontalAlignment="Left" Margin="54,91,0,0" VerticalAlignment="Top" Height="62" Width="194" FontSize="24"/>
-        <Label Content="Hastanın Adı Soyadı:" HorizontalAlignment="Left" Margin="54,153,0,0" VerticalAlignment="Top" Height="62" Width="234" FontSize="24"/>
-        <Label Content="Çıktı Tarihi:" HorizontalAlignment="Left" Margin="54,220,0,0" VerticalAlignment="Top" Height="62" Width="180" FontSize="24"/>
-        <Label Content="Dönülen Derece:" HorizontalAlignment="Left" Margin="54,287,0,0" VerticalAlignment="Top" Height="62" Width="194" FontSize="24"/>
-        <Label x:Name="CTckno1" Content="Veriden Gelen TC" HorizontalAlignment="Left" Margin="309,91,0,0" VerticalAlignment="Top" Height="62" Width="180" FontSize="24"/>
-        <Label x:Name="CAdSoyad1" Content="Veriden adsoyad" HorizontalAlignment="Left" Margin="309,153,0,0" VerticalAlignment="Top" Height="62" Width="180" FontSize="24"/>
-        <Label x:Name="CTarih1" Content="veriden tarih" HorizontalAlignment="Left" Margin="309,220,0,0" VerticalAlignment="Top" Height="62" Width="180" FontSize="24"/>
-        <Label x:Name="CDerece1" Content="veriden Derece" HorizontalAlignment="Left" Margin="309,287,0,0" VerticalAlignment="Top" Height="62" Width="180" FontSize="24"/>
-        <Label Content="Rapor Numarası:" HorizontalAlignment="Left" Margin="54,349,0,0" VerticalAlignment="Top" Height="62" Width="194" FontSize="24"/>
-        <Label Content="Rapor Yorumu:" HorizontalAlignment="Left" Margin="54,411,0,0" VerticalAlignment="Top" Height="62" Width="194" FontSize="24"/>
-        <Label x:Name="RId" Content="Veriden ID" HorizontalAlignment="Left" Margin="309,349,0,0" VerticalAlignment="Top" Height="62" Width="194" FontSize="24"/>
-        <Image x:Name="PImage"  HorizontalAlignment="Left" Height="505" Margin="615,91,0,0" VerticalAlignment="Top" Width="385">
-            <Image.Effect>
-                <imageeffects:BrightnessContrastEffect x:Name="brightness" />
-            </Image.Effect>
-        </Image>
-        <h:HelixViewport3D Height="505" Margin="614,83,51,0" VerticalAlignment="Top" Width="385" Name="model3D" Visibility="Hidden" >
-            <h:DefaultLights/>
-            <h:Teapot x:Name="tea"/>
-        </h:HelixViewport3D>
-        <Label x:Name="Sayac" Content="veriden GElen" HorizontalAlignment="Left" Margin="718,622,0,0" VerticalAlignment="Top" FontSize="24" RenderTransformOrigin="0.338,0.549" Width="165"/>
-        <Button x:Name="SagaGorsel" Content="--&gt;" HorizontalAlignment="Left" Margin="883,624,0,0" VerticalAlignment="Top" Height="40" Width="93" FontSize="24" Click="SagaGorsel_Click"/>
-        <Button x:Name="SolaGorsel" Content="&lt;--" HorizontalAlignment="Left" Margin="615,624,0,0" VerticalAlignment="Top" Height="42" Width="93" FontSize="24" Click="SolaGorsel_Click"/>
-        <Button x:Name="ButtonRaporEkle" Content="Rapor Ekle" HorizontalAlignment="Left" Margin="309,352,0,0" VerticalAlignment="Top" FontSize="24" Width="194" Click="ButtonRaporEkle_Click"/>
-        <Button x:Name="btnSwap" Content="3D Görüntüle" HorizontalAlignment="Left" Margin="680,715,0,0" VerticalAlignment="Top" FontSize="24" Width="226" Click="btnSwap_Click"/>
-        <Slider x:Name="sliderParlaklik" HorizontalAlignment="Right" Margin="0,91,0,0" VerticalAlignment="Top" Width="46" Orientation="Vertical" Height="453" Minimum="-1" Value="0" Maximum="1" ValueChanged="sliderParlaklik_ValueChanged"/>
-        <TextBlock x:Name="RYorum" HorizontalAlignment="Left" Margin="54,490,0,0" VerticalAlignment="Top" FontSize="24" Text="" Height="261" Width="463"/>
-
-    </Grid>
+            </Grid>
+        </Border>
+    </Border>
 </Page>
