@@ -151,5 +151,25 @@ namespace NDATTibbiCihaz.Presentation
                 raporGetir();
             }
         }
+
+        private void btnSwap_Click(object sender, RoutedEventArgs e)
+        {
+            if(model3D.Visibility == Visibility.Hidden)
+            {
+                model3D.Visibility = Visibility.Visible;
+                PImage.Visibility = Visibility.Hidden;
+                Sayac.Visibility = Visibility.Hidden;
+
+                btnSwap.Content = "Görsel Görüntüle";
+            }
+            else
+            {
+                model3D.Visibility = Visibility.Hidden;
+                PImage.Visibility = Visibility.Visible;
+                Sayac.Visibility = Visibility.Visible;
+
+                btnSwap.Content = "3D Görüntüle";
+            }
+        }
     }
 }

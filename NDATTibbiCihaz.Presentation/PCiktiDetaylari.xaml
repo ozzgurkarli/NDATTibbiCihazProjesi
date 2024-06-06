@@ -3,44 +3,37 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:NDATTibbiCihaz.Presentation"
+      xmlns:local="clr-namespace:NDATTibbiCihaz.Presentation" xmlns:h="http://helix-toolkit.org/wpf"
       mc:Ignorable="d" 
       d:DesignHeight="980" d:DesignWidth="1050"
       Title="PCiktiDetaylari">
 
-    <Grid Background="AntiqueWhite">
+    <Grid Background="AntiqueWhite" Loaded="Grid_Loaded" Margin="0,0,-0,-0">
         <Label Content="Çıktı Detayları" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Height="62" Width="180" FontSize="24"/>
         <Label Content="Hastanın TCKNo:" HorizontalAlignment="Left" Margin="54,91,0,0" VerticalAlignment="Top" Height="62" Width="194" FontSize="24"/>
         <Label Content="Hastanın Adı Soyadı:" HorizontalAlignment="Left" Margin="54,153,0,0" VerticalAlignment="Top" Height="62" Width="234" FontSize="24"/>
         <Label Content="Çıktı Tarihi:" HorizontalAlignment="Left" Margin="54,220,0,0" VerticalAlignment="Top" Height="62" Width="180" FontSize="24"/>
         <Label Content="Dönülen Derece:" HorizontalAlignment="Left" Margin="54,287,0,0" VerticalAlignment="Top" Height="62" Width="194" FontSize="24"/>
-        <Label x:Name="CTckno" Content="Veriden Gelen TC" HorizontalAlignment="Left" Margin="309,91,0,0" VerticalAlignment="Top" Height="62" Width="180" FontSize="24"/>
-        <Label x:Name="CAdSoyad" Content="Veriden adsoyad" HorizontalAlignment="Left" Margin="309,153,0,0" VerticalAlignment="Top" Height="62" Width="180" FontSize="24"/>
-        <Label x:Name="CTarih" Content="veriden tarih" HorizontalAlignment="Left" Margin="309,220,0,0" VerticalAlignment="Top" Height="62" Width="180" FontSize="24"/>
-        <Label x:Name="CDerece" Content="veriden Derece" HorizontalAlignment="Left" Margin="309,287,0,0" VerticalAlignment="Top" Height="62" Width="180" FontSize="24"/>
+        <Label x:Name="CTckno1" Content="Veriden Gelen TC" HorizontalAlignment="Left" Margin="309,91,0,0" VerticalAlignment="Top" Height="62" Width="180" FontSize="24"/>
+        <Label x:Name="CAdSoyad1" Content="Veriden adsoyad" HorizontalAlignment="Left" Margin="309,153,0,0" VerticalAlignment="Top" Height="62" Width="180" FontSize="24"/>
+        <Label x:Name="CTarih1" Content="veriden tarih" HorizontalAlignment="Left" Margin="309,220,0,0" VerticalAlignment="Top" Height="62" Width="180" FontSize="24"/>
+        <Label x:Name="CDerece1" Content="veriden Derece" HorizontalAlignment="Left" Margin="309,287,0,0" VerticalAlignment="Top" Height="62" Width="180" FontSize="24"/>
         <Label Content="Rapor Numarası:" HorizontalAlignment="Left" Margin="54,349,0,0" VerticalAlignment="Top" Height="62" Width="194" FontSize="24"/>
         <Label Content="Rapor Yorumu:" HorizontalAlignment="Left" Margin="54,411,0,0" VerticalAlignment="Top" Height="62" Width="194" FontSize="24"/>
-        <Grid Background="AntiqueWhite" Loaded="Grid_Loaded">
-            <Label Content="Çıktı Detayları" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Height="62" Width="180" FontSize="24"/>
-            <Label Content="Hastanın TCKNo:" HorizontalAlignment="Left" Margin="54,91,0,0" VerticalAlignment="Top" Height="62" Width="194" FontSize="24"/>
-            <Label Content="Hastanın Adı Soyadı:" HorizontalAlignment="Left" Margin="54,153,0,0" VerticalAlignment="Top" Height="62" Width="234" FontSize="24"/>
-            <Label Content="Çıktı Tarihi:" HorizontalAlignment="Left" Margin="54,220,0,0" VerticalAlignment="Top" Height="62" Width="180" FontSize="24"/>
-            <Label Content="Dönülen Derece:" HorizontalAlignment="Left" Margin="54,287,0,0" VerticalAlignment="Top" Height="62" Width="194" FontSize="24"/>
-            <Label x:Name="CTckno1" Content="Veriden Gelen TC" HorizontalAlignment="Left" Margin="309,91,0,0" VerticalAlignment="Top" Height="62" Width="180" FontSize="24"/>
-            <Label x:Name="CAdSoyad1" Content="Veriden adsoyad" HorizontalAlignment="Left" Margin="309,153,0,0" VerticalAlignment="Top" Height="62" Width="180" FontSize="24"/>
-            <Label x:Name="CTarih1" Content="veriden tarih" HorizontalAlignment="Left" Margin="309,220,0,0" VerticalAlignment="Top" Height="62" Width="180" FontSize="24"/>
-            <Label x:Name="CDerece1" Content="veriden Derece" HorizontalAlignment="Left" Margin="309,287,0,0" VerticalAlignment="Top" Height="62" Width="180" FontSize="24"/>
-            <Label Content="Rapor Numarası:" HorizontalAlignment="Left" Margin="54,349,0,0" VerticalAlignment="Top" Height="62" Width="194" FontSize="24"/>
-            <Label Content="Rapor Yorumu:" HorizontalAlignment="Left" Margin="54,411,0,0" VerticalAlignment="Top" Height="62" Width="194" FontSize="24"/>
-            <Label x:Name="RId" Content="Veriden ID" HorizontalAlignment="Left" Margin="309,349,0,0" VerticalAlignment="Top" Height="62" Width="194" FontSize="24"/>
-            <Label x:Name="RYorum" Content="Veriden Yorum" HorizontalAlignment="Left" Margin="309,411,0,0" VerticalAlignment="Top" Height="62" Width="216" FontSize="24"/>
-            <Image x:Name="PImage"  HorizontalAlignment="Left" Height="363" Margin="615,91,0,0" VerticalAlignment="Top" Width="385"/>
-            <Label x:Name="Sayac" Content="veriden GElen" HorizontalAlignment="Left" Margin="713,488,0,0" VerticalAlignment="Top" FontSize="24" RenderTransformOrigin="0.338,0.549" Width="165"/>
-            <Button x:Name="SagaGorsel" Content="--&gt;" HorizontalAlignment="Left" Margin="883,490,0,0" VerticalAlignment="Top" Height="40" Width="93" FontSize="24" Click="SagaGorsel_Click"/>
-            <Button x:Name="SolaGorsel" Content="&lt;--" HorizontalAlignment="Left" Margin="615,490,0,0" VerticalAlignment="Top" Height="42" Width="93" FontSize="24" Click="SolaGorsel_Click"/>
-            <Button x:Name="ButtonRaporEkle" Content="Rapor Ekle" HorizontalAlignment="Left" Margin="309,352,0,0" VerticalAlignment="Top" FontSize="24" Width="194" Click="ButtonRaporEkle_Click"/>
-
+        <Label x:Name="RId" Content="Veriden ID" HorizontalAlignment="Left" Margin="309,349,0,0" VerticalAlignment="Top" Height="62" Width="194" FontSize="24"/>
+        <Label x:Name="RYorum" Content="Veriden Yorum" HorizontalAlignment="Left" Margin="309,411,0,0" VerticalAlignment="Top" Height="62" Width="216" FontSize="24"/>
+        <Image x:Name="PImage"  HorizontalAlignment="Left" Height="505" Margin="615,91,0,0" VerticalAlignment="Top" Width="385"/>
+        <Grid Margin="0">
+            <h:HelixViewport3D Height="505" Margin="614,83,51,0" VerticalAlignment="Top" Width="385" Name="model3D" Visibility="Hidden" >
+                <h:DefaultLights/>
+                <h:Teapot x:Name="tea"/>
+            </h:HelixViewport3D>
+            <Button x:Name="btnSwap" Content="3D Görüntüle" HorizontalAlignment="Left" Margin="723,712,0,0" VerticalAlignment="Top" FontSize="24" Width="174" Click="btnSwap_Click"/>
         </Grid>
+        <Label x:Name="Sayac" Content="veriden GElen" HorizontalAlignment="Left" Margin="718,622,0,0" VerticalAlignment="Top" FontSize="24" RenderTransformOrigin="0.338,0.549" Width="165"/>
+        <Button x:Name="SagaGorsel" Content="--&gt;" HorizontalAlignment="Left" Margin="883,624,0,0" VerticalAlignment="Top" Height="40" Width="93" FontSize="24" Click="SagaGorsel_Click"/>
+        <Button x:Name="SolaGorsel" Content="&lt;--" HorizontalAlignment="Left" Margin="615,624,0,0" VerticalAlignment="Top" Height="42" Width="93" FontSize="24" Click="SolaGorsel_Click"/>
+        <Button x:Name="ButtonRaporEkle" Content="Rapor Ekle" HorizontalAlignment="Left" Margin="309,352,0,0" VerticalAlignment="Top" FontSize="24" Width="194" Click="ButtonRaporEkle_Click"/>
 
     </Grid>
 </Page>
