@@ -92,7 +92,7 @@ namespace NDATTibbiCihaz.Presentation
                                 break;
                             }
                             lblCount.Content = $"{i}/{projSayisi}";
-                            await Task.Delay(1000);
+                            await Task.Delay(500);
                         }
 
                         calisiyor = false;
