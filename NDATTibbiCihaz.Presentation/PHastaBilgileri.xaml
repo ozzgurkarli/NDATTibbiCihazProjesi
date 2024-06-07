@@ -7,7 +7,7 @@
       mc:Ignorable="d" 
       d:DesignHeight="980" d:DesignWidth="1520"
       Title="PHastaBilgileri">
-    <Grid Background="White">
+    <Grid Background="#1B1448">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="450"/>
             <ColumnDefinition/>
@@ -18,22 +18,21 @@
                     <RowDefinition Height="450"/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <Grid Grid.Row="0" Background="LightGray">
-                    <Border BorderBrush="Black" BorderThickness="1" Margin="0,0,287,266">
-                        <Image Source="/Logo/erkek_avatar.jpg" Height="170" Width="170"/>
-                    </Border>
-                    <Label Content="Adı Soyadı: " HorizontalAlignment="Left" Margin="188,118,0,0" VerticalAlignment="Top" Height="44" Width="115" FontSize="20"/>
-                    <Label Content="TCK NO: " HorizontalAlignment="Left" Margin="188,20,0,0" VerticalAlignment="Top" Height="44" Width="82" FontSize="20"/>
-                    <Label Content="Doğum Tarihi: " HorizontalAlignment="Left" Margin="41,218,0,0" VerticalAlignment="Top" Height="44" Width="136" FontSize="20"/>
-                    <Label x:Name="Hasta_TCKNO" Content="veriden gelen tc" HorizontalAlignment="Left" Margin="280,20,0,0" VerticalAlignment="Top" Width="168" FontSize="20" RenderTransformOrigin="0.518,1.366"/>
-                    <Label x:Name="Hasta_Ad" Content="a" HorizontalAlignment="Left" Margin="303,118,0,0" VerticalAlignment="Top" Width="156" FontSize="20" Height="66"/>
-                    <Label Content="Çıktı Sayısı:" HorizontalAlignment="Left" Margin="41,293,0,0" VerticalAlignment="Top" Height="44" Width="108" FontSize="20"/>
-                    <Label x:Name="hasta_DogumTarihi" Content="veriden gelen DT" HorizontalAlignment="Left" Margin="229,218,0,0" VerticalAlignment="Top" Width="117" FontSize="20"/>
-                    <Label x:Name="Hasta_CiktiSayisi" Content="veriden Çıktı sayısı:" HorizontalAlignment="Left" VerticalAlignment="Top" Height="44" Width="264" FontSize="20" Margin="224,293,0,0"/>
-                    <Label x:Name="Hasta_SonZiyaret" Content="veriden son ziyaret tarihi" HorizontalAlignment="Left" Margin="224,360,0,0" VerticalAlignment="Top" Height="44" Width="158" FontSize="20" RenderTransformOrigin="0.506,2.727"/>
-                    <Label Content="Son Ziyaret Tarihi: " HorizontalAlignment="Left" Margin="41,360,0,0" VerticalAlignment="Top" Height="44" Width="178" FontSize="20"/>
+                <Grid Grid.Row="0" Background="#060531">
+                    <StackPanel HorizontalAlignment="Left" Width="180" Height="240" VerticalAlignment="Bottom" Margin="0,0,0,230">
+                        <Image Source="/Logo/avatar.jpg" Height="240" Width="160"/>
+                    </StackPanel>
+                    <Label FontWeight="Medium" FontFamily="Montserrat" Foreground="White" Content="Adı Soyadı: " HorizontalAlignment="Left" Margin="188,118,0,0" VerticalAlignment="Top" Height="44" Width="115" FontSize="20"/>
+                    <Label FontWeight="Medium" FontFamily="Montserrat" Foreground="White" Content="TCK NO: " HorizontalAlignment="Left" Margin="188,20,0,0" VerticalAlignment="Top" Height="44" Width="82" FontSize="20"/>
+                    <Label FontWeight="Medium" FontFamily="Montserrat" Foreground="White" Content="Doğum Tarihi: " HorizontalAlignment="Left" Margin="41,218,0,0" VerticalAlignment="Top" Height="44" Width="136" FontSize="20"/>
+                    <Label FontWeight="Medium" FontFamily="Montserrat" Foreground="White" x:Name="Hasta_TCKNO" Content="veriden gelen tc" HorizontalAlignment="Left" Margin="280,20,0,0" VerticalAlignment="Top" Width="168" FontSize="20" RenderTransformOrigin="0.518,1.366"/>
+                    <Label FontWeight="Medium" FontFamily="Montserrat" Foreground="White" x:Name="Hasta_Ad" Content="a" HorizontalAlignment="Left" Margin="303,118,0,0" VerticalAlignment="Top" Width="156" FontSize="20" Height="66"/>
+                    <Label FontWeight="Medium" FontFamily="Montserrat" Foreground="White" Content="Çıktı Sayısı:" HorizontalAlignment="Left" Margin="41,293,0,0" VerticalAlignment="Top" Height="44" Width="108" FontSize="20"/>
+                    <Label FontWeight="Medium" FontFamily="Montserrat" Foreground="White" x:Name="hasta_DogumTarihi" Content="veriden gelen DT" HorizontalAlignment="Left" Margin="229,218,0,0" VerticalAlignment="Top" Width="117" FontSize="20"/>
+                    <Label FontWeight="Medium" FontFamily="Montserrat" Foreground="White" x:Name="Hasta_CiktiSayisi" Content="veriden Çıktı sayısı:" HorizontalAlignment="Left" VerticalAlignment="Top" Height="44" Width="264" FontSize="20" Margin="224,293,0,0"/>
+                    <Label FontWeight="Medium" FontFamily="Montserrat" Foreground="White" x:Name="Hasta_SonZiyaret" Content="veriden son ziyaret tarihi" HorizontalAlignment="Left" Margin="224,360,0,0" VerticalAlignment="Top" Height="44" Width="158" FontSize="20" RenderTransformOrigin="0.506,2.727"/>
+                    <Label FontWeight="Medium" FontFamily="Montserrat" Foreground="White" Content="Son Ziyaret Tarihi: " HorizontalAlignment="Left" Margin="41,360,0,0" VerticalAlignment="Top" Height="44" Width="178" FontSize="20"/>
                 </Grid>
-                <Grid Grid.Row="1" Margin="0,0,-48,0"/>
             </Grid>
         </Border>
     </Grid>

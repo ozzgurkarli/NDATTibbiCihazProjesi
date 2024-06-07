@@ -26,10 +26,31 @@
                 </LinearGradientBrush>
             </Border.Background>
             <Grid>
-                <Button Foreground="White" HorizontalAlignment="Left" Margin="51,35,0,0" VerticalAlignment="Top" FontSize="24" Height="50" Width="50" Click="Button_Click">
+                <Button HorizontalAlignment="Left" Margin="51,25,0,0" VerticalAlignment="Top" FontSize="24" Height="50" Width="50" Click="Button_Click">
                     <StackPanel>
                         <materialDesign:PackIcon Kind="Home" Width="50" Height="50" HorizontalAlignment="Center"/>
                     </StackPanel>
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="#462AD8"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#28AEED"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Width="50" Height="50"
+            CornerRadius="20"
+            Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+                          HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+
                 </Button>
                 <TextBox x:Name="TextBoxProj" HorizontalAlignment="Left" Margin="1205,421,0,0" TextWrapping="Wrap" Height="40" VerticalAlignment="Top" Width="358" FontSize="24" Visibility="Visible" FontWeight="Medium" FontFamily="Montserrat"     
             Background="Transparent"

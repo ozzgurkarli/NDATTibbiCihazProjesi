@@ -156,10 +156,31 @@
              Padding="20,0,0,0"></TextBox>
                 <Label FontWeight="Medium" FontFamily="Montserrat" x:Name="LabelProj" HorizontalAlignment="Left" Margin="1025,345,0,0" VerticalAlignment="Top" Foreground="White" FontSize="24" Content="Projeksiyon Sayısı:" Visibility="Hidden"/>
                 <Label FontWeight="Medium" FontFamily="Montserrat" x:Name="LabelBagliMakine" HorizontalAlignment="Left" Margin="135,40,0,0" VerticalAlignment="Top" FontSize="24" Foreground="White"/>
-                <Button Foreground="White" HorizontalAlignment="Left" Margin="51,35,0,0" VerticalAlignment="Top" FontSize="24" Height="50" Width="50" Click="Button_Click">
+                <Button HorizontalAlignment="Left" Margin="51,25,0,0" VerticalAlignment="Top" FontSize="24" Height="50" Width="50" Click="Button_Click">
                     <StackPanel>
                         <materialDesign:PackIcon Kind="Home" Width="50" Height="50" HorizontalAlignment="Center"/>
                     </StackPanel>
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="#462AD8"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#28AEED"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Width="50" Height="50"
+            CornerRadius="20"
+            Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+                          HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+
                 </Button>
                 <Button Foreground="White" x:Name="ButtonCalistir" Content="Çalıştır" HorizontalAlignment="Left" Margin="1221,853,0,0" VerticalAlignment="Top" Height="40" Width="301" FontSize="24" Click="ButtonCalistir_Click" Visibility="Hidden">
                     <Button.Style>

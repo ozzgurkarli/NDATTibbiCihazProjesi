@@ -93,27 +93,35 @@
                 <RowDefinition Height="200"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <Grid Grid.Row="0">
-                <Border Background="LightGray"
+            <Grid Grid.Row="0" Background="Black">
+                <Border Background="#060531"
                         Margin="5,5,5,5"
                         CornerRadius="10">
                     <Grid>
                         <TextBlock Text="Arama" 
                                    FontSize="24"
                                    Margin="10,20,0,0"
-                                   Foreground="Black"
+                                   Foreground="White"
                                    VerticalAlignment="Top"
                                     />
                         <TextBox x:Name="TextBoxArama" VerticalAlignment="Top"
                                  Height="40"
                                  Margin="10,60,10,0"
                                  FontSize="24"
-                                 />
+                                 FontWeight="Medium" FontFamily="Montserrat"     
+            Background="Transparent"
+             Foreground="White"
+             CaretBrush="LightGray"
+             BorderBrush="DarkGray"
+             BorderThickness="0,0,0,2"
+             VerticalContentAlignment="Center"
+             Padding="20,0,0,0"></TextBox>
                         <Button x:Name="ButtonArama"
                             Width="180" Height="50"
                             
                             Margin="10,100,10,0"
                             Content="Ara"
+                                Foreground="White"
                             FontSize="24"
                             Padding="0,-4,0,0" Click="ButtonArama_Click"
                                 >
@@ -142,14 +150,14 @@
                 </Border>
 
             </Grid>
-            <ListView Background="DimGray" 
+            <ListView Background="#1B1448" 
                       x:Name="ListViewHastalar" 
                       Grid.Row="1" Height="780" 
                       VerticalAlignment="Top" 
                       Grid.RowSpan="4" 
                       FontSize="24" 
                       SelectionChanged="ListViewHastalar_SelectionChanged" 
-                      BorderBrush="{x:Null}">
+                      BorderBrush="{x:Null}" Foreground="White">
                 <ListView.ItemContainerStyle>
                     <Style TargetType="ListViewItem">
                         <Setter Property="Template">
@@ -157,7 +165,7 @@
                                 <ControlTemplate TargetType="ListViewItem">
                                     <StackPanel>
                                         <Border x:Name="border" 
-                                                Background="LightGray" 
+                                                Background="#462AD8" 
                                                 BorderBrush="Black" 
                                                 BorderThickness="0,0,0,1" 
                                                 Margin="5,5,5,0"
@@ -186,7 +194,7 @@
             </ListView>
 
         </Grid>
-        <Grid Grid.Row="1" Grid.Column="1">
+        <Grid Grid.Row="1" Grid.Column="1" Background="#1B1448">
             <Frame x:Name="Sonuc" 
                    NavigationUIVisibility="Hidden" 
                    Height="980" Width="1520"/>

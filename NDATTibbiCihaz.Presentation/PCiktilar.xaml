@@ -10,6 +10,7 @@
 
     <Grid Loaded="Grid_Loaded">
         <ListView Background="#1B1448" 
+                  Foreground="White"
           x:Name="ListViewCiktilar" Height="980
                   " Width="470"
           HorizontalAlignment="Left"
