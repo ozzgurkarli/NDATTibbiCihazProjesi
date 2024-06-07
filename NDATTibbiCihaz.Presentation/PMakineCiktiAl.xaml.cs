@@ -60,6 +60,7 @@ namespace NDATTibbiCihaz.Presentation
                 Path3D = fileDialog3D.FileName;
                 Name3D = fileDialog3D.SafeFileName;
 
+                ButtonPath.Foreground = new SolidColorBrush(Colors.DarkGray);
                 ButtonPath.IsEnabled = false;
             }
 
@@ -128,6 +129,7 @@ namespace NDATTibbiCihaz.Presentation
                     LabelTCKNo.Content = Hasta.AdSoyad;
 
                     TextBoxTCKNo.IsEnabled = false;
+                    ButtonHastaAra.Foreground = new SolidColorBrush(Colors.DarkGray);
                     ButtonHastaAra.IsEnabled = false;
                 }
                 else
@@ -154,6 +156,7 @@ namespace NDATTibbiCihaz.Presentation
                 FilePaths.AddRange(fileDialogImage.FileNames);
                 FileNames.AddRange(fileDialogImage.SafeFileNames);
 
+                ButtonGorsellerPath.Foreground = new SolidColorBrush(Colors.DarkGray);
                 ButtonGorsellerPath.IsEnabled = false;
             }
         }

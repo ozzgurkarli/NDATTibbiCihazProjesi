@@ -168,7 +168,7 @@
                         </ControlTemplate>
                     </Button.Template>
                 </Button>
-                <Label FontWeight="Medium" FontFamily="Montserrat"  x:Name="LabelTCKNo" Content="" HorizontalAlignment="Left" Margin="521,421,0,0" VerticalAlignment="Top" Foreground="White" FontSize="24"/>
+                <Label FontWeight="Medium" FontFamily="Montserrat"  x:Name="LabelTCKNo" Content="" HorizontalAlignment="Left" Margin="481,421,0,0" VerticalAlignment="Top" Foreground="White" FontSize="24"/>
                 <Label FontWeight="Medium" FontFamily="Montserrat"  x:Name="lblCount" Content="" HorizontalAlignment="Left" Margin="922,780,0,0" VerticalAlignment="Top" FontSize="24" Foreground="White"/>
 
             </Grid>

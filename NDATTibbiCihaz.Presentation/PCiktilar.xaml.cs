@@ -39,7 +39,7 @@ namespace NDATTibbiCihaz.Presentation
 
                 foreach(Cikti item in Havuz.Ciktilar)
                 {
-                    string temp = $"\n{item.CiktiTarihi.Day} {NDATTibbiCihaz.Common.Method.OrtakMetodlar.AyBul(item.CiktiTarihi.Month)} {item.CiktiTarihi.Year} Tarihli Çıktı (${item.Id})\n";
+                    string temp = $"\n{item.CiktiTarihi.Day} {NDATTibbiCihaz.Common.Method.OrtakMetodlar.AyBul(item.CiktiTarihi.Month)} {item.CiktiTarihi.Year} Tarihli Çıktı (Id:{item.Id})\n";
 
                     ciktiList.Add(temp);
                 }
