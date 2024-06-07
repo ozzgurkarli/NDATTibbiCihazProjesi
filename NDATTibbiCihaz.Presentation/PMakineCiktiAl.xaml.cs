@@ -74,7 +74,12 @@ namespace NDATTibbiCihaz.Presentation
                 decimal taramaAcisi;
                 int projSayisi;
 
-                if (!string.IsNullOrEmpty(Path3D) && !string.IsNullOrEmpty(Name3D) && !FilePaths.IsNullOrEmpty() && !string.IsNullOrEmpty(Hasta.AdSoyad) && decimal.TryParse(TextBoxTaramaAcisi.Text, out taramaAcisi) && int.TryParse(TextBoxProj.Text, out projSayisi))
+                if (!string.IsNullOrEmpty(Path3D) && 
+                    !string.IsNullOrEmpty(Name3D) && 
+                    !FilePaths.IsNullOrEmpty() && 
+                    !string.IsNullOrEmpty(Hasta.AdSoyad) && 
+                    decimal.TryParse(TextBoxTaramaAcisi.Text, out taramaAcisi) && 
+                    int.TryParse(TextBoxProj.Text, out projSayisi))
                 {
                     if (projSayisi != FilePaths.Count)
                     {
